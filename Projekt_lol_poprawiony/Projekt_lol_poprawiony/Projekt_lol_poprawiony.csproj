@@ -32,8 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +49,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BazaLOL.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BazaLOL.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Baza_KlientWeb.cs" />
+    <Compile Include="ObiektyJson.cs" />
+    <Compile Include="oknoDodaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oknoDodaj.Designer.cs">
+      <DependentUpon>oknoDodaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="oknoGłowne.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="oknoGłowne.Designer.cs">
       <DependentUpon>oknoGłowne.cs</DependentUpon>
     </Compile>
+    <Compile Include="oknoUsun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oknoUsun.Designer.cs">
+      <DependentUpon>oknoUsun.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="BazaLOL.dbml.layout">
+      <DependentUpon>BazaLOL.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="oknoDodaj.resx">
+      <DependentUpon>oknoDodaj.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="oknoGłowne.resx">
       <DependentUpon>oknoGłowne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="oknoUsun.resx">
+      <DependentUpon>oknoUsun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -64,6 +97,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="BazaLOL.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BazaLOL.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +115,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
