@@ -41,6 +41,9 @@ namespace Projekt_lol_poprawiony
             {
                 groupBoxNazwaGracza.BackColor=Color.Red;
             }
+            labelLevel.Text = labelLevel.Text + gra.level;
+            labelKDA.Text =labelKDA.Text+ gra.championsKilled + "/" + gra.assists + "/" + gra.numDeaths;
+            labelMiniony.Text =labelMiniony.Text + gra.minionsKilled.ToString();
         }
     }
 }
