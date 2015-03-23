@@ -11,3 +11,4 @@ C:\Users\Krzysiek\Documents\GitHub\projekt_lol_poprawiona\Projekt_lol_poprawiony
 C:\Users\Krzysiek\Documents\GitHub\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Krzysiek\Documents\GitHub\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Krzysiek\Documents\GitHub\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\obj\Debug\Projekt_lol_poprawiony.oknoUsun.resources
+C:\Users\Krzysiek\Documents\GitHub\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\obj\Debug\Projekt_lol_poprawiony.userControlGra.resources

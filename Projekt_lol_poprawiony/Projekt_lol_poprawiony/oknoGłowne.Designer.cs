@@ -39,15 +39,16 @@
             // 
             // flowLayoutPanelGry
             // 
+            this.flowLayoutPanelGry.AutoScroll = true;
             this.flowLayoutPanelGry.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanelGry.Name = "flowLayoutPanelGry";
-            this.flowLayoutPanelGry.Size = new System.Drawing.Size(512, 338);
+            this.flowLayoutPanelGry.Size = new System.Drawing.Size(572, 338);
             this.flowLayoutPanelGry.TabIndex = 0;
             // 
             // listBoxGracze
             // 
             this.listBoxGracze.FormattingEnabled = true;
-            this.listBoxGracze.Location = new System.Drawing.Point(530, 12);
+            this.listBoxGracze.Location = new System.Drawing.Point(590, 12);
             this.listBoxGracze.MultiColumn = true;
             this.listBoxGracze.Name = "listBoxGracze";
             this.listBoxGracze.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
@@ -56,7 +57,7 @@
             // 
             // buttonDodaj
             // 
-            this.buttonDodaj.Location = new System.Drawing.Point(530, 126);
+            this.buttonDodaj.Location = new System.Drawing.Point(590, 126);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(70, 23);
             this.buttonDodaj.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // buttonUsun
             // 
-            this.buttonUsun.Location = new System.Drawing.Point(602, 126);
+            this.buttonUsun.Location = new System.Drawing.Point(662, 126);
             this.buttonUsun.Name = "buttonUsun";
             this.buttonUsun.Size = new System.Drawing.Size(70, 23);
             this.buttonUsun.TabIndex = 3;
@@ -76,7 +77,7 @@
             // 
             // groupBoxOpcjeDodatkowe
             // 
-            this.groupBoxOpcjeDodatkowe.Location = new System.Drawing.Point(530, 213);
+            this.groupBoxOpcjeDodatkowe.Location = new System.Drawing.Point(590, 213);
             this.groupBoxOpcjeDodatkowe.Name = "groupBoxOpcjeDodatkowe";
             this.groupBoxOpcjeDodatkowe.Size = new System.Drawing.Size(142, 136);
             this.groupBoxOpcjeDodatkowe.TabIndex = 4;
@@ -85,16 +86,17 @@
             // 
             // buttonWyswietl
             // 
-            this.buttonWyswietl.Location = new System.Drawing.Point(530, 155);
+            this.buttonWyswietl.Location = new System.Drawing.Point(590, 155);
             this.buttonWyswietl.Name = "buttonWyswietl";
             this.buttonWyswietl.Size = new System.Drawing.Size(142, 23);
             this.buttonWyswietl.TabIndex = 6;
             this.buttonWyswietl.Text = "Wyswietl";
             this.buttonWyswietl.UseVisualStyleBackColor = true;
+            this.buttonWyswietl.Click += new System.EventHandler(this.buttonWyswietl_Click);
             // 
             // buttonAktualizujDane
             // 
-            this.buttonAktualizujDane.Location = new System.Drawing.Point(530, 184);
+            this.buttonAktualizujDane.Location = new System.Drawing.Point(590, 184);
             this.buttonAktualizujDane.Name = "buttonAktualizujDane";
             this.buttonAktualizujDane.Size = new System.Drawing.Size(142, 23);
             this.buttonAktualizujDane.TabIndex = 7;
@@ -106,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 362);
+            this.ClientSize = new System.Drawing.Size(744, 360);
             this.Controls.Add(this.buttonAktualizujDane);
             this.Controls.Add(this.buttonWyswietl);
             this.Controls.Add(this.groupBoxOpcjeDodatkowe);

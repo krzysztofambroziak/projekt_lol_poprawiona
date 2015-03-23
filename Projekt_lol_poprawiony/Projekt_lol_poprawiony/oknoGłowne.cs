@@ -149,5 +149,23 @@ namespace Projekt_lol_poprawiony
             oU.FormClosed += okno_FormClosed;
             oU.Show();
         }
+
+        private void wyswietlGry()
+        {
+            flowLayoutPanelGry.Controls.Clear();
+
+            int i = 0;
+            foreach(Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d=>d.timePlayed))
+            {
+                userControlGra wyswietlanaGra = new userControlGra(gra);
+                wyswietlanaGra.Tag = i++;
+                flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+            }
+        }
+
+        private void buttonWyswietl_Click(object sender, EventArgs e)
+        {
+            wyswietlGry();
+        }
     }
 }

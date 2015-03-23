@@ -76,6 +76,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="userControlGra.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControlGra.Designer.cs">
+      <DependentUpon>userControlGra.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="userControlGra.resx">
+      <DependentUpon>userControlGra.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="BazaLOL.dbml.layout">
       <DependentUpon>BazaLOL.dbml</DependentUpon>
     </None>
