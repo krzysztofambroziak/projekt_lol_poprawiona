@@ -47,7 +47,11 @@ namespace Projekt_lol_poprawiony
                 groupBoxNazwaGracza.BackColor=Color.Red;
             }
             labelLevel.Text = labelLevel.Text + gra.level;
-            labelKDA.Text =labelKDA.Text+ gra.championsKilled + "/" + gra.assists + "/" + gra.numDeaths;
+            labelKillsWartosc.Text = gra.championsKilled.ToString();
+            labelDeathsWartosc.Text = gra.numDeaths.ToString();
+            labelAssistsWartosc.Text = gra.assists.ToString();
+            float KDA = (float)(gra.championsKilled + gra.assists) / gra.numDeaths;
+            labelKDA.Text =labelKDA.Text+ String.Format("{0:N2}",KDA);
             labelMiniony.Text =labelMiniony.Text + gra.minionsKilled.ToString();
             labelZdobyteIPWartosc.Text = labelZdobyteIPWartosc.Text + gra.ipEarned.ToString();
             labelZdobyteZlotoWartosc.Text = labelZdobyteZlotoWartosc.Text + gra.goldEarned.ToString();
@@ -68,7 +72,9 @@ namespace Projekt_lol_poprawiony
             labelMagiczneObrazeniaZadaneGraczomWartosc.Text = labelMagiczneObrazeniaZadaneGraczomWartosc.Text + gra.magicDamageDealtPlayer.ToString();
             labelOtrzymaneFizyczneObrazeniaWartosc.Text = labelOtrzymaneFizyczneObrazeniaWartosc.Text + gra.physicalDamageTaken.ToString();
             labelOtrzymaneMagiczneObrazeniaWartosc.Text = labelOtrzymaneMagiczneObrazeniaWartosc.Text + gra.magicDamageTaken.ToString();
-            labelCzasGryWartosc.Text = labelCzasGryWartosc.Text + gra.timePlayed.ToString();
+            int pom1 = gra.timePlayed;
+            int pom2 = pom1 % 100;
+            labelCzasGryWartosc.Text = labelCzasGryWartosc.Text + (gra.timePlayed / 100).ToString() + ":"+pom2;
             labelOgolnaIloscHPWyleczonaWartosc.Text = labelOgolnaIloscHPWyleczonaWartosc.Text + gra.totalHeal.ToString();
             labelKupionychWardowWartosc.Text = labelKupionychWardowWartosc.Text + gra.sightWardsBought.ToString();
             labelMagiczneObrazeniaZadanePotworomWartosc.Text = labelMagiczneObrazeniaZadanePotworomWartosc.Text + gra.magicDamageDealtToChampions.ToString();

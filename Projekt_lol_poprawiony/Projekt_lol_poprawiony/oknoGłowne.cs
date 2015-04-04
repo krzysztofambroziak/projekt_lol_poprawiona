@@ -153,14 +153,83 @@ namespace Projekt_lol_poprawiony
         private void wyswietlGry()
         {
             flowLayoutPanelGry.Controls.Clear();
-
-            int i = 0;
-            foreach(Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d=>d.timePlayed))
+            if (radioButtonKills.Checked == true)
             {
-                userControlGra wyswietlanaGra = new userControlGra(gra);
-                wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                wyswietlanaGra.Tag = i++;
-                flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                int i = 0;
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.championsKilled))
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                    wyswietlanaGra.Tag = i++;
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
+                
+            }
+            else if (radioButtonDeaths.Checked == true)
+            {
+                int i = 0;
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.numDeaths))
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                    wyswietlanaGra.Tag = i++;
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
+            }
+            else if (radioButtonAssists.Checked == true)
+            {
+                int i = 0;
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.assists))
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                    wyswietlanaGra.Tag = i++;
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
+            }
+            else if (radioButtonZarobioneIP.Checked == true)
+            {
+                int i = 0;
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.ipEarned))
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                    wyswietlanaGra.Tag = i++;
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
+            }
+            else if (radioButtonCzasGry.Checked == true)
+            {
+                int i = 0;
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.timePlayed))
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                    wyswietlanaGra.Tag = i++;
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
+            }
+            else if (radioButtonObrazeniaZadane.Checked == true)
+            {
+                int i = 0;
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.totalDamageDealt))
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                    wyswietlanaGra.Tag = i++;
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
+            }
+            else
+            {
+                int i = 0;
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.totalDamageTaken))
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                    wyswietlanaGra.Tag = i++;
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
             }
         }
 
@@ -168,6 +237,7 @@ namespace Projekt_lol_poprawiony
         {
             wyswietlGry();
         }
+
 
     }
 }

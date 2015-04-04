@@ -40,6 +40,41 @@
             this.labelKDA = new System.Windows.Forms.Label();
             this.labelMiniony = new System.Windows.Forms.Label();
             this.groupBoxNazwaGracza = new System.Windows.Forms.GroupBox();
+            this.pictureBoxSpell2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSpell1 = new System.Windows.Forms.PictureBox();
+            this.labelCalkowityCzasZadanychCCWartosc = new System.Windows.Forms.Label();
+            this.labelPostawioneWardyWartosc = new System.Windows.Forms.Label();
+            this.labelZniszczoneWardyWartosc = new System.Windows.Forms.Label();
+            this.labelOtrzymaneNieuchronneObrazeniaWartosc = new System.Windows.Forms.Label();
+            this.labelNieuchronneObrazeniaZadanePotworomWartosc = new System.Windows.Forms.Label();
+            this.labelNieuchronneObrazeniaZadaneGraczomWartosc = new System.Windows.Forms.Label();
+            this.labelCalkowitaIloscObrazenPotworomWartosc = new System.Windows.Forms.Label();
+            this.labelFizyczneObrazeniaZadanePotworomWartosc = new System.Windows.Forms.Label();
+            this.labelMagiczneObrazeniaZadanePotworomWartosc = new System.Windows.Forms.Label();
+            this.labelKupionychWardowWartosc = new System.Windows.Forms.Label();
+            this.labelOgolnaIloscHPWyleczonaWartosc = new System.Windows.Forms.Label();
+            this.labelCzasGryWartosc = new System.Windows.Forms.Label();
+            this.labelMagiczneObrazeniaZadaneGraczom = new System.Windows.Forms.Label();
+            this.labelOtrzymaneFizyczneObrazenia = new System.Windows.Forms.Label();
+            this.labelOtrzymaneMagiczneObrazenia = new System.Windows.Forms.Label();
+            this.labelFizyczneObrazeniaZadaneGraczomWartosc = new System.Windows.Forms.Label();
+            this.labelMagiczneObrazeniaZadaneGraczomWartosc = new System.Windows.Forms.Label();
+            this.labelOtrzymaneMagiczneObrazeniaWartosc = new System.Windows.Forms.Label();
+            this.labelOgolnaIloscHPWyleczona = new System.Windows.Forms.Label();
+            this.labelMagiczneObrazeniaZadanePotworom = new System.Windows.Forms.Label();
+            this.labelFizyczneObrazeniaZadanePotworom = new System.Windows.Forms.Label();
+            this.labelCalkowitaIloscObrazenPotworom = new System.Windows.Forms.Label();
+            this.labelNieuchronneObrazeniaZadaneGraczom = new System.Windows.Forms.Label();
+            this.labelOtrzymaneFizyczneObrazeniaWartosc = new System.Windows.Forms.Label();
+            this.labelCzasGry = new System.Windows.Forms.Label();
+            this.labelKupionychWardow = new System.Windows.Forms.Label();
+            this.labelCalkowityCzasZadanychCC = new System.Windows.Forms.Label();
+            this.labelNieuchronneObrazeniaZadanePotworom = new System.Windows.Forms.Label();
+            this.labelOtrzymaneNieuchronneObrażenia = new System.Windows.Forms.Label();
+            this.labelZniszczoneWardy = new System.Windows.Forms.Label();
+            this.labelPostawioneWardy = new System.Windows.Forms.Label();
+            this.labelFizyczneObrazeniaZadaneGraczom = new System.Windows.Forms.Label();
+            this.labelZabiteNeutralneMinionyWartosc = new System.Windows.Forms.Label();
             this.labelZadaneCalkowiteObrazeniaWartosc = new System.Windows.Forms.Label();
             this.labelOtrzymaneCalkowiteObrazenia = new System.Windows.Forms.Label();
             this.labelOtrzymaneCalkowiteObrazeniaWartosc = new System.Windows.Forms.Label();
@@ -57,41 +92,12 @@
             this.labelZdobyteIPWartosc = new System.Windows.Forms.Label();
             this.labelZdobyteIP = new System.Windows.Forms.Label();
             this.labelRozwin = new System.Windows.Forms.Label();
-            this.labelZabiteNeutralneMinionyWartosc = new System.Windows.Forms.Label();
-            this.labelFizyczneObrazeniaZadaneGraczom = new System.Windows.Forms.Label();
-            this.labelPostawioneWardy = new System.Windows.Forms.Label();
-            this.labelZniszczoneWardy = new System.Windows.Forms.Label();
-            this.labelOtrzymaneNieuchronneObrażenia = new System.Windows.Forms.Label();
-            this.labelNieuchronneObrazeniaZadanePotworom = new System.Windows.Forms.Label();
-            this.labelCalkowityCzasZadanychCC = new System.Windows.Forms.Label();
-            this.labelKupionychWardow = new System.Windows.Forms.Label();
-            this.labelCzasGry = new System.Windows.Forms.Label();
-            this.labelOtrzymaneFizyczneObrazeniaWartosc = new System.Windows.Forms.Label();
-            this.labelNieuchronneObrazeniaZadaneGraczom = new System.Windows.Forms.Label();
-            this.labelCalkowitaIloscObrazenPotworom = new System.Windows.Forms.Label();
-            this.labelFizyczneObrazeniaZadanePotworom = new System.Windows.Forms.Label();
-            this.labelMagiczneObrazeniaZadanePotworom = new System.Windows.Forms.Label();
-            this.labelOgolnaIloscHPWyleczona = new System.Windows.Forms.Label();
-            this.labelOtrzymaneMagiczneObrazeniaWartosc = new System.Windows.Forms.Label();
-            this.labelMagiczneObrazeniaZadaneGraczomWartosc = new System.Windows.Forms.Label();
-            this.labelFizyczneObrazeniaZadaneGraczomWartosc = new System.Windows.Forms.Label();
-            this.labelOtrzymaneMagiczneObrazenia = new System.Windows.Forms.Label();
-            this.labelOtrzymaneFizyczneObrazenia = new System.Windows.Forms.Label();
-            this.labelMagiczneObrazeniaZadaneGraczom = new System.Windows.Forms.Label();
-            this.labelCzasGryWartosc = new System.Windows.Forms.Label();
-            this.labelOgolnaIloscHPWyleczonaWartosc = new System.Windows.Forms.Label();
-            this.labelKupionychWardowWartosc = new System.Windows.Forms.Label();
-            this.labelMagiczneObrazeniaZadanePotworomWartosc = new System.Windows.Forms.Label();
-            this.labelFizyczneObrazeniaZadanePotworomWartosc = new System.Windows.Forms.Label();
-            this.labelCalkowitaIloscObrazenPotworomWartosc = new System.Windows.Forms.Label();
-            this.labelNieuchronneObrazeniaZadaneGraczomWartosc = new System.Windows.Forms.Label();
-            this.labelNieuchronneObrazeniaZadanePotworomWartosc = new System.Windows.Forms.Label();
-            this.labelOtrzymaneNieuchronneObrazeniaWartosc = new System.Windows.Forms.Label();
-            this.labelZniszczoneWardyWartosc = new System.Windows.Forms.Label();
-            this.labelPostawioneWardyWartosc = new System.Windows.Forms.Label();
-            this.labelCalkowityCzasZadanychCCWartosc = new System.Windows.Forms.Label();
-            this.pictureBoxSpell1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSpell2 = new System.Windows.Forms.PictureBox();
+            this.labelKills = new System.Windows.Forms.Label();
+            this.labelDeaths = new System.Windows.Forms.Label();
+            this.labelAsysty = new System.Windows.Forms.Label();
+            this.labelKillsWartosc = new System.Windows.Forms.Label();
+            this.labelDeathsWartosc = new System.Windows.Forms.Label();
+            this.labelAssistsWartosc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picturePostac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem5)).BeginInit();
@@ -101,8 +107,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem6)).BeginInit();
             this.groupBoxNazwaGracza.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpell1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpell2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpell1)).BeginInit();
             this.SuspendLayout();
             // 
             // picturePostac
@@ -180,7 +186,7 @@
             // labelLevel
             // 
             this.labelLevel.AutoSize = true;
-            this.labelLevel.Location = new System.Drawing.Point(176, 60);
+            this.labelLevel.Location = new System.Drawing.Point(172, 23);
             this.labelLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLevel.Name = "labelLevel";
             this.labelLevel.Size = new System.Drawing.Size(50, 17);
@@ -190,7 +196,7 @@
             // labelKDA
             // 
             this.labelKDA.AutoSize = true;
-            this.labelKDA.Location = new System.Drawing.Point(176, 84);
+            this.labelKDA.Location = new System.Drawing.Point(172, 83);
             this.labelKDA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelKDA.Name = "labelKDA";
             this.labelKDA.Size = new System.Drawing.Size(52, 17);
@@ -210,6 +216,12 @@
             // groupBoxNazwaGracza
             // 
             this.groupBoxNazwaGracza.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBoxNazwaGracza.Controls.Add(this.labelAssistsWartosc);
+            this.groupBoxNazwaGracza.Controls.Add(this.labelDeathsWartosc);
+            this.groupBoxNazwaGracza.Controls.Add(this.labelKillsWartosc);
+            this.groupBoxNazwaGracza.Controls.Add(this.labelAsysty);
+            this.groupBoxNazwaGracza.Controls.Add(this.labelDeaths);
+            this.groupBoxNazwaGracza.Controls.Add(this.labelKills);
             this.groupBoxNazwaGracza.Controls.Add(this.pictureBoxSpell2);
             this.groupBoxNazwaGracza.Controls.Add(this.pictureBoxSpell1);
             this.groupBoxNazwaGracza.Controls.Add(this.labelCalkowityCzasZadanychCCWartosc);
@@ -282,6 +294,302 @@
             this.groupBoxNazwaGracza.TabStop = false;
             this.groupBoxNazwaGracza.Text = "groupBox1";
             // 
+            // pictureBoxSpell2
+            // 
+            this.pictureBoxSpell2.Location = new System.Drawing.Point(247, 130);
+            this.pictureBoxSpell2.Name = "pictureBoxSpell2";
+            this.pictureBoxSpell2.Size = new System.Drawing.Size(66, 58);
+            this.pictureBoxSpell2.TabIndex = 62;
+            this.pictureBoxSpell2.TabStop = false;
+            // 
+            // pictureBoxSpell1
+            // 
+            this.pictureBoxSpell1.Location = new System.Drawing.Point(175, 130);
+            this.pictureBoxSpell1.Name = "pictureBoxSpell1";
+            this.pictureBoxSpell1.Size = new System.Drawing.Size(66, 58);
+            this.pictureBoxSpell1.TabIndex = 61;
+            this.pictureBoxSpell1.TabStop = false;
+            // 
+            // labelCalkowityCzasZadanychCCWartosc
+            // 
+            this.labelCalkowityCzasZadanychCCWartosc.AutoSize = true;
+            this.labelCalkowityCzasZadanychCCWartosc.Location = new System.Drawing.Point(532, 419);
+            this.labelCalkowityCzasZadanychCCWartosc.Name = "labelCalkowityCzasZadanychCCWartosc";
+            this.labelCalkowityCzasZadanychCCWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelCalkowityCzasZadanychCCWartosc.TabIndex = 60;
+            // 
+            // labelPostawioneWardyWartosc
+            // 
+            this.labelPostawioneWardyWartosc.AutoSize = true;
+            this.labelPostawioneWardyWartosc.Location = new System.Drawing.Point(467, 402);
+            this.labelPostawioneWardyWartosc.Name = "labelPostawioneWardyWartosc";
+            this.labelPostawioneWardyWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelPostawioneWardyWartosc.TabIndex = 59;
+            // 
+            // labelZniszczoneWardyWartosc
+            // 
+            this.labelZniszczoneWardyWartosc.AutoSize = true;
+            this.labelZniszczoneWardyWartosc.Location = new System.Drawing.Point(467, 385);
+            this.labelZniszczoneWardyWartosc.Name = "labelZniszczoneWardyWartosc";
+            this.labelZniszczoneWardyWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelZniszczoneWardyWartosc.TabIndex = 58;
+            // 
+            // labelOtrzymaneNieuchronneObrazeniaWartosc
+            // 
+            this.labelOtrzymaneNieuchronneObrazeniaWartosc.AutoSize = true;
+            this.labelOtrzymaneNieuchronneObrazeniaWartosc.Location = new System.Drawing.Point(566, 368);
+            this.labelOtrzymaneNieuchronneObrazeniaWartosc.Name = "labelOtrzymaneNieuchronneObrazeniaWartosc";
+            this.labelOtrzymaneNieuchronneObrazeniaWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelOtrzymaneNieuchronneObrazeniaWartosc.TabIndex = 57;
+            // 
+            // labelNieuchronneObrazeniaZadanePotworomWartosc
+            // 
+            this.labelNieuchronneObrazeniaZadanePotworomWartosc.AutoSize = true;
+            this.labelNieuchronneObrazeniaZadanePotworomWartosc.Location = new System.Drawing.Point(615, 351);
+            this.labelNieuchronneObrazeniaZadanePotworomWartosc.Name = "labelNieuchronneObrazeniaZadanePotworomWartosc";
+            this.labelNieuchronneObrazeniaZadanePotworomWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelNieuchronneObrazeniaZadanePotworomWartosc.TabIndex = 56;
+            // 
+            // labelNieuchronneObrazeniaZadaneGraczomWartosc
+            // 
+            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.AutoSize = true;
+            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.Location = new System.Drawing.Point(615, 334);
+            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.Name = "labelNieuchronneObrazeniaZadaneGraczomWartosc";
+            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.TabIndex = 55;
+            // 
+            // labelCalkowitaIloscObrazenPotworomWartosc
+            // 
+            this.labelCalkowitaIloscObrazenPotworomWartosc.AutoSize = true;
+            this.labelCalkowitaIloscObrazenPotworomWartosc.Location = new System.Drawing.Point(563, 317);
+            this.labelCalkowitaIloscObrazenPotworomWartosc.Name = "labelCalkowitaIloscObrazenPotworomWartosc";
+            this.labelCalkowitaIloscObrazenPotworomWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelCalkowitaIloscObrazenPotworomWartosc.TabIndex = 54;
+            // 
+            // labelFizyczneObrazeniaZadanePotworomWartosc
+            // 
+            this.labelFizyczneObrazeniaZadanePotworomWartosc.AutoSize = true;
+            this.labelFizyczneObrazeniaZadanePotworomWartosc.Location = new System.Drawing.Point(592, 300);
+            this.labelFizyczneObrazeniaZadanePotworomWartosc.Name = "labelFizyczneObrazeniaZadanePotworomWartosc";
+            this.labelFizyczneObrazeniaZadanePotworomWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelFizyczneObrazeniaZadanePotworomWartosc.TabIndex = 53;
+            // 
+            // labelMagiczneObrazeniaZadanePotworomWartosc
+            // 
+            this.labelMagiczneObrazeniaZadanePotworomWartosc.AutoSize = true;
+            this.labelMagiczneObrazeniaZadanePotworomWartosc.Location = new System.Drawing.Point(597, 283);
+            this.labelMagiczneObrazeniaZadanePotworomWartosc.Name = "labelMagiczneObrazeniaZadanePotworomWartosc";
+            this.labelMagiczneObrazeniaZadanePotworomWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelMagiczneObrazeniaZadanePotworomWartosc.TabIndex = 52;
+            // 
+            // labelKupionychWardowWartosc
+            // 
+            this.labelKupionychWardowWartosc.AutoSize = true;
+            this.labelKupionychWardowWartosc.Location = new System.Drawing.Point(471, 266);
+            this.labelKupionychWardowWartosc.Name = "labelKupionychWardowWartosc";
+            this.labelKupionychWardowWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelKupionychWardowWartosc.TabIndex = 51;
+            // 
+            // labelOgolnaIloscHPWyleczonaWartosc
+            // 
+            this.labelOgolnaIloscHPWyleczonaWartosc.AutoSize = true;
+            this.labelOgolnaIloscHPWyleczonaWartosc.Location = new System.Drawing.Point(521, 249);
+            this.labelOgolnaIloscHPWyleczonaWartosc.Name = "labelOgolnaIloscHPWyleczonaWartosc";
+            this.labelOgolnaIloscHPWyleczonaWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelOgolnaIloscHPWyleczonaWartosc.TabIndex = 50;
+            // 
+            // labelCzasGryWartosc
+            // 
+            this.labelCzasGryWartosc.AutoSize = true;
+            this.labelCzasGryWartosc.Location = new System.Drawing.Point(409, 232);
+            this.labelCzasGryWartosc.Name = "labelCzasGryWartosc";
+            this.labelCzasGryWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelCzasGryWartosc.TabIndex = 49;
+            // 
+            // labelMagiczneObrazeniaZadaneGraczom
+            // 
+            this.labelMagiczneObrazeniaZadaneGraczom.AutoSize = true;
+            this.labelMagiczneObrazeniaZadaneGraczom.Location = new System.Drawing.Point(7, 385);
+            this.labelMagiczneObrazeniaZadaneGraczom.Name = "labelMagiczneObrazeniaZadaneGraczom";
+            this.labelMagiczneObrazeniaZadaneGraczom.Size = new System.Drawing.Size(248, 17);
+            this.labelMagiczneObrazeniaZadaneGraczom.TabIndex = 48;
+            this.labelMagiczneObrazeniaZadaneGraczom.Text = "Magiczne obrażenia zadane graczom:";
+            // 
+            // labelOtrzymaneFizyczneObrazenia
+            // 
+            this.labelOtrzymaneFizyczneObrazenia.AutoSize = true;
+            this.labelOtrzymaneFizyczneObrazenia.Location = new System.Drawing.Point(7, 402);
+            this.labelOtrzymaneFizyczneObrazenia.Name = "labelOtrzymaneFizyczneObrazenia";
+            this.labelOtrzymaneFizyczneObrazenia.Size = new System.Drawing.Size(203, 17);
+            this.labelOtrzymaneFizyczneObrazenia.TabIndex = 47;
+            this.labelOtrzymaneFizyczneObrazenia.Text = "Otrzymane fizyczne obrażenia:";
+            // 
+            // labelOtrzymaneMagiczneObrazenia
+            // 
+            this.labelOtrzymaneMagiczneObrazenia.AutoSize = true;
+            this.labelOtrzymaneMagiczneObrazenia.Location = new System.Drawing.Point(7, 419);
+            this.labelOtrzymaneMagiczneObrazenia.Name = "labelOtrzymaneMagiczneObrazenia";
+            this.labelOtrzymaneMagiczneObrazenia.Size = new System.Drawing.Size(212, 17);
+            this.labelOtrzymaneMagiczneObrazenia.TabIndex = 46;
+            this.labelOtrzymaneMagiczneObrazenia.Text = "Otrzymane magiczne obrażenia:";
+            // 
+            // labelFizyczneObrazeniaZadaneGraczomWartosc
+            // 
+            this.labelFizyczneObrazeniaZadaneGraczomWartosc.AutoSize = true;
+            this.labelFizyczneObrazeniaZadaneGraczomWartosc.Location = new System.Drawing.Point(260, 368);
+            this.labelFizyczneObrazeniaZadaneGraczomWartosc.Name = "labelFizyczneObrazeniaZadaneGraczomWartosc";
+            this.labelFizyczneObrazeniaZadaneGraczomWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelFizyczneObrazeniaZadaneGraczomWartosc.TabIndex = 45;
+            // 
+            // labelMagiczneObrazeniaZadaneGraczomWartosc
+            // 
+            this.labelMagiczneObrazeniaZadaneGraczomWartosc.AutoSize = true;
+            this.labelMagiczneObrazeniaZadaneGraczomWartosc.Location = new System.Drawing.Point(261, 385);
+            this.labelMagiczneObrazeniaZadaneGraczomWartosc.Name = "labelMagiczneObrazeniaZadaneGraczomWartosc";
+            this.labelMagiczneObrazeniaZadaneGraczomWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelMagiczneObrazeniaZadaneGraczomWartosc.TabIndex = 44;
+            // 
+            // labelOtrzymaneMagiczneObrazeniaWartosc
+            // 
+            this.labelOtrzymaneMagiczneObrazeniaWartosc.AutoSize = true;
+            this.labelOtrzymaneMagiczneObrazeniaWartosc.Location = new System.Drawing.Point(225, 419);
+            this.labelOtrzymaneMagiczneObrazeniaWartosc.Name = "labelOtrzymaneMagiczneObrazeniaWartosc";
+            this.labelOtrzymaneMagiczneObrazeniaWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelOtrzymaneMagiczneObrazeniaWartosc.TabIndex = 43;
+            // 
+            // labelOgolnaIloscHPWyleczona
+            // 
+            this.labelOgolnaIloscHPWyleczona.AutoSize = true;
+            this.labelOgolnaIloscHPWyleczona.Location = new System.Drawing.Point(336, 249);
+            this.labelOgolnaIloscHPWyleczona.Name = "labelOgolnaIloscHPWyleczona";
+            this.labelOgolnaIloscHPWyleczona.Size = new System.Drawing.Size(182, 17);
+            this.labelOgolnaIloscHPWyleczona.TabIndex = 42;
+            this.labelOgolnaIloscHPWyleczona.Text = "Ogólna ilość HP wyleczona:";
+            // 
+            // labelMagiczneObrazeniaZadanePotworom
+            // 
+            this.labelMagiczneObrazeniaZadanePotworom.AutoSize = true;
+            this.labelMagiczneObrazeniaZadanePotworom.Location = new System.Drawing.Point(336, 283);
+            this.labelMagiczneObrazeniaZadanePotworom.Name = "labelMagiczneObrazeniaZadanePotworom";
+            this.labelMagiczneObrazeniaZadanePotworom.Size = new System.Drawing.Size(255, 17);
+            this.labelMagiczneObrazeniaZadanePotworom.TabIndex = 41;
+            this.labelMagiczneObrazeniaZadanePotworom.Text = "Magiczne obrażenia zadane potworom:";
+            // 
+            // labelFizyczneObrazeniaZadanePotworom
+            // 
+            this.labelFizyczneObrazeniaZadanePotworom.AutoSize = true;
+            this.labelFizyczneObrazeniaZadanePotworom.Location = new System.Drawing.Point(336, 300);
+            this.labelFizyczneObrazeniaZadanePotworom.Name = "labelFizyczneObrazeniaZadanePotworom";
+            this.labelFizyczneObrazeniaZadanePotworom.Size = new System.Drawing.Size(250, 17);
+            this.labelFizyczneObrazeniaZadanePotworom.TabIndex = 40;
+            this.labelFizyczneObrazeniaZadanePotworom.Text = "Fizyczne obrażenia zadane potworom:";
+            // 
+            // labelCalkowitaIloscObrazenPotworom
+            // 
+            this.labelCalkowitaIloscObrazenPotworom.AutoSize = true;
+            this.labelCalkowitaIloscObrazenPotworom.Location = new System.Drawing.Point(336, 317);
+            this.labelCalkowitaIloscObrazenPotworom.Name = "labelCalkowitaIloscObrazenPotworom";
+            this.labelCalkowitaIloscObrazenPotworom.Size = new System.Drawing.Size(224, 17);
+            this.labelCalkowitaIloscObrazenPotworom.TabIndex = 39;
+            this.labelCalkowitaIloscObrazenPotworom.Text = "Całkowita ilość obrażen potworom:";
+            // 
+            // labelNieuchronneObrazeniaZadaneGraczom
+            // 
+            this.labelNieuchronneObrazeniaZadaneGraczom.AutoSize = true;
+            this.labelNieuchronneObrazeniaZadaneGraczom.Location = new System.Drawing.Point(336, 334);
+            this.labelNieuchronneObrazeniaZadaneGraczom.Name = "labelNieuchronneObrazeniaZadaneGraczom";
+            this.labelNieuchronneObrazeniaZadaneGraczom.Size = new System.Drawing.Size(273, 17);
+            this.labelNieuchronneObrazeniaZadaneGraczom.TabIndex = 38;
+            this.labelNieuchronneObrazeniaZadaneGraczom.Text = "Nieuchronne obrażenia zadane graczom: ";
+            // 
+            // labelOtrzymaneFizyczneObrazeniaWartosc
+            // 
+            this.labelOtrzymaneFizyczneObrazeniaWartosc.AutoSize = true;
+            this.labelOtrzymaneFizyczneObrazeniaWartosc.Location = new System.Drawing.Point(216, 402);
+            this.labelOtrzymaneFizyczneObrazeniaWartosc.Name = "labelOtrzymaneFizyczneObrazeniaWartosc";
+            this.labelOtrzymaneFizyczneObrazeniaWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelOtrzymaneFizyczneObrazeniaWartosc.TabIndex = 37;
+            // 
+            // labelCzasGry
+            // 
+            this.labelCzasGry.AutoSize = true;
+            this.labelCzasGry.Location = new System.Drawing.Point(336, 232);
+            this.labelCzasGry.Name = "labelCzasGry";
+            this.labelCzasGry.Size = new System.Drawing.Size(67, 17);
+            this.labelCzasGry.TabIndex = 36;
+            this.labelCzasGry.Text = "Czas gry:";
+            // 
+            // labelKupionychWardow
+            // 
+            this.labelKupionychWardow.AutoSize = true;
+            this.labelKupionychWardow.Location = new System.Drawing.Point(336, 266);
+            this.labelKupionychWardow.Name = "labelKupionychWardow";
+            this.labelKupionychWardow.Size = new System.Drawing.Size(129, 17);
+            this.labelKupionychWardow.TabIndex = 35;
+            this.labelKupionychWardow.Text = "Kupionych wardów:";
+            // 
+            // labelCalkowityCzasZadanychCC
+            // 
+            this.labelCalkowityCzasZadanychCC.AutoSize = true;
+            this.labelCalkowityCzasZadanychCC.Location = new System.Drawing.Point(336, 419);
+            this.labelCalkowityCzasZadanychCC.Name = "labelCalkowityCzasZadanychCC";
+            this.labelCalkowityCzasZadanychCC.Size = new System.Drawing.Size(190, 17);
+            this.labelCalkowityCzasZadanychCC.TabIndex = 34;
+            this.labelCalkowityCzasZadanychCC.Text = "Całkowity czas zadanych CC:";
+            // 
+            // labelNieuchronneObrazeniaZadanePotworom
+            // 
+            this.labelNieuchronneObrazeniaZadanePotworom.AutoSize = true;
+            this.labelNieuchronneObrazeniaZadanePotworom.Location = new System.Drawing.Point(336, 351);
+            this.labelNieuchronneObrazeniaZadanePotworom.Name = "labelNieuchronneObrazeniaZadanePotworom";
+            this.labelNieuchronneObrazeniaZadanePotworom.Size = new System.Drawing.Size(276, 17);
+            this.labelNieuchronneObrazeniaZadanePotworom.TabIndex = 33;
+            this.labelNieuchronneObrazeniaZadanePotworom.Text = "Nieuchronne obrażenia zadane potworom:";
+            // 
+            // labelOtrzymaneNieuchronneObrażenia
+            // 
+            this.labelOtrzymaneNieuchronneObrażenia.AutoSize = true;
+            this.labelOtrzymaneNieuchronneObrażenia.Location = new System.Drawing.Point(336, 368);
+            this.labelOtrzymaneNieuchronneObrażenia.Name = "labelOtrzymaneNieuchronneObrażenia";
+            this.labelOtrzymaneNieuchronneObrażenia.Size = new System.Drawing.Size(231, 17);
+            this.labelOtrzymaneNieuchronneObrażenia.TabIndex = 32;
+            this.labelOtrzymaneNieuchronneObrażenia.Text = "Otrzymane nieuchronne obrażenia:";
+            // 
+            // labelZniszczoneWardy
+            // 
+            this.labelZniszczoneWardy.AutoSize = true;
+            this.labelZniszczoneWardy.Location = new System.Drawing.Point(336, 385);
+            this.labelZniszczoneWardy.Name = "labelZniszczoneWardy";
+            this.labelZniszczoneWardy.Size = new System.Drawing.Size(125, 17);
+            this.labelZniszczoneWardy.TabIndex = 31;
+            this.labelZniszczoneWardy.Text = "Zniszczone wardy:";
+            // 
+            // labelPostawioneWardy
+            // 
+            this.labelPostawioneWardy.AutoSize = true;
+            this.labelPostawioneWardy.Location = new System.Drawing.Point(336, 402);
+            this.labelPostawioneWardy.Name = "labelPostawioneWardy";
+            this.labelPostawioneWardy.Size = new System.Drawing.Size(125, 17);
+            this.labelPostawioneWardy.TabIndex = 30;
+            this.labelPostawioneWardy.Text = "Postawione wardy:";
+            // 
+            // labelFizyczneObrazeniaZadaneGraczom
+            // 
+            this.labelFizyczneObrazeniaZadaneGraczom.AutoSize = true;
+            this.labelFizyczneObrazeniaZadaneGraczom.Location = new System.Drawing.Point(7, 368);
+            this.labelFizyczneObrazeniaZadaneGraczom.Name = "labelFizyczneObrazeniaZadaneGraczom";
+            this.labelFizyczneObrazeniaZadaneGraczom.Size = new System.Drawing.Size(247, 17);
+            this.labelFizyczneObrazeniaZadaneGraczom.TabIndex = 29;
+            this.labelFizyczneObrazeniaZadaneGraczom.Text = "Fizyczne obrażenia zadane graczom: ";
+            // 
+            // labelZabiteNeutralneMinionyWartosc
+            // 
+            this.labelZabiteNeutralneMinionyWartosc.AutoSize = true;
+            this.labelZabiteNeutralneMinionyWartosc.Location = new System.Drawing.Point(176, 351);
+            this.labelZabiteNeutralneMinionyWartosc.Name = "labelZabiteNeutralneMinionyWartosc";
+            this.labelZabiteNeutralneMinionyWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelZabiteNeutralneMinionyWartosc.TabIndex = 28;
+            // 
             // labelZadaneCalkowiteObrazeniaWartosc
             // 
             this.labelZadaneCalkowiteObrazeniaWartosc.AutoSize = true;
@@ -327,7 +635,7 @@
             // labelNajwiekszeWielobojstwo
             // 
             this.labelNajwiekszeWielobojstwo.AutoSize = true;
-            this.labelNajwiekszeWielobojstwo.Location = new System.Drawing.Point(7, 334);
+            this.labelNajwiekszeWielobojstwo.Location = new System.Drawing.Point(8, 334);
             this.labelNajwiekszeWielobojstwo.Name = "labelNajwiekszeWielobojstwo";
             this.labelNajwiekszeWielobojstwo.Size = new System.Drawing.Size(168, 17);
             this.labelNajwiekszeWielobojstwo.TabIndex = 22;
@@ -336,7 +644,7 @@
             // labelNajwiekszeWielobojstwoWartosc
             // 
             this.labelNajwiekszeWielobojstwoWartosc.AutoSize = true;
-            this.labelNajwiekszeWielobojstwoWartosc.Location = new System.Drawing.Point(168, 334);
+            this.labelNajwiekszeWielobojstwoWartosc.Location = new System.Drawing.Point(176, 334);
             this.labelNajwiekszeWielobojstwoWartosc.Name = "labelNajwiekszeWielobojstwoWartosc";
             this.labelNajwiekszeWielobojstwoWartosc.Size = new System.Drawing.Size(0, 17);
             this.labelNajwiekszeWielobojstwoWartosc.TabIndex = 21;
@@ -430,301 +738,56 @@
             this.labelRozwin.Text = "Rozwiń";
             this.labelRozwin.Click += new System.EventHandler(this.labelRozwin_Click);
             // 
-            // labelZabiteNeutralneMinionyWartosc
-            // 
-            this.labelZabiteNeutralneMinionyWartosc.AutoSize = true;
-            this.labelZabiteNeutralneMinionyWartosc.Location = new System.Drawing.Point(176, 351);
-            this.labelZabiteNeutralneMinionyWartosc.Name = "labelZabiteNeutralneMinionyWartosc";
-            this.labelZabiteNeutralneMinionyWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelZabiteNeutralneMinionyWartosc.TabIndex = 28;
-            // 
-            // labelFizyczneObrazeniaZadaneGraczom
-            // 
-            this.labelFizyczneObrazeniaZadaneGraczom.AutoSize = true;
-            this.labelFizyczneObrazeniaZadaneGraczom.Location = new System.Drawing.Point(7, 368);
-            this.labelFizyczneObrazeniaZadaneGraczom.Name = "labelFizyczneObrazeniaZadaneGraczom";
-            this.labelFizyczneObrazeniaZadaneGraczom.Size = new System.Drawing.Size(247, 17);
-            this.labelFizyczneObrazeniaZadaneGraczom.TabIndex = 29;
-            this.labelFizyczneObrazeniaZadaneGraczom.Text = "Fizyczne obrażenia zadane graczom: ";
-            // 
-            // labelPostawioneWardy
-            // 
-            this.labelPostawioneWardy.AutoSize = true;
-            this.labelPostawioneWardy.Location = new System.Drawing.Point(336, 402);
-            this.labelPostawioneWardy.Name = "labelPostawioneWardy";
-            this.labelPostawioneWardy.Size = new System.Drawing.Size(125, 17);
-            this.labelPostawioneWardy.TabIndex = 30;
-            this.labelPostawioneWardy.Text = "Postawione wardy:";
-            // 
-            // labelZniszczoneWardy
-            // 
-            this.labelZniszczoneWardy.AutoSize = true;
-            this.labelZniszczoneWardy.Location = new System.Drawing.Point(336, 385);
-            this.labelZniszczoneWardy.Name = "labelZniszczoneWardy";
-            this.labelZniszczoneWardy.Size = new System.Drawing.Size(125, 17);
-            this.labelZniszczoneWardy.TabIndex = 31;
-            this.labelZniszczoneWardy.Text = "Zniszczone wardy:";
-            // 
-            // labelOtrzymaneNieuchronneObrażenia
-            // 
-            this.labelOtrzymaneNieuchronneObrażenia.AutoSize = true;
-            this.labelOtrzymaneNieuchronneObrażenia.Location = new System.Drawing.Point(336, 368);
-            this.labelOtrzymaneNieuchronneObrażenia.Name = "labelOtrzymaneNieuchronneObrażenia";
-            this.labelOtrzymaneNieuchronneObrażenia.Size = new System.Drawing.Size(231, 17);
-            this.labelOtrzymaneNieuchronneObrażenia.TabIndex = 32;
-            this.labelOtrzymaneNieuchronneObrażenia.Text = "Otrzymane nieuchronne obrażenia:";
-            // 
-            // labelNieuchronneObrazeniaZadanePotworom
-            // 
-            this.labelNieuchronneObrazeniaZadanePotworom.AutoSize = true;
-            this.labelNieuchronneObrazeniaZadanePotworom.Location = new System.Drawing.Point(336, 351);
-            this.labelNieuchronneObrazeniaZadanePotworom.Name = "labelNieuchronneObrazeniaZadanePotworom";
-            this.labelNieuchronneObrazeniaZadanePotworom.Size = new System.Drawing.Size(276, 17);
-            this.labelNieuchronneObrazeniaZadanePotworom.TabIndex = 33;
-            this.labelNieuchronneObrazeniaZadanePotworom.Text = "Nieuchronne obrażenia zadane potworom:";
-            // 
-            // labelCalkowityCzasZadanychCC
-            // 
-            this.labelCalkowityCzasZadanychCC.AutoSize = true;
-            this.labelCalkowityCzasZadanychCC.Location = new System.Drawing.Point(336, 419);
-            this.labelCalkowityCzasZadanychCC.Name = "labelCalkowityCzasZadanychCC";
-            this.labelCalkowityCzasZadanychCC.Size = new System.Drawing.Size(190, 17);
-            this.labelCalkowityCzasZadanychCC.TabIndex = 34;
-            this.labelCalkowityCzasZadanychCC.Text = "Całkowity czas zadanych CC:";
-            // 
-            // labelKupionychWardow
-            // 
-            this.labelKupionychWardow.AutoSize = true;
-            this.labelKupionychWardow.Location = new System.Drawing.Point(336, 266);
-            this.labelKupionychWardow.Name = "labelKupionychWardow";
-            this.labelKupionychWardow.Size = new System.Drawing.Size(129, 17);
-            this.labelKupionychWardow.TabIndex = 35;
-            this.labelKupionychWardow.Text = "Kupionych wardów:";
-            // 
-            // labelCzasGry
-            // 
-            this.labelCzasGry.AutoSize = true;
-            this.labelCzasGry.Location = new System.Drawing.Point(336, 232);
-            this.labelCzasGry.Name = "labelCzasGry";
-            this.labelCzasGry.Size = new System.Drawing.Size(67, 17);
-            this.labelCzasGry.TabIndex = 36;
-            this.labelCzasGry.Text = "Czas gry:";
-            // 
-            // labelOtrzymaneFizyczneObrazeniaWartosc
-            // 
-            this.labelOtrzymaneFizyczneObrazeniaWartosc.AutoSize = true;
-            this.labelOtrzymaneFizyczneObrazeniaWartosc.Location = new System.Drawing.Point(216, 402);
-            this.labelOtrzymaneFizyczneObrazeniaWartosc.Name = "labelOtrzymaneFizyczneObrazeniaWartosc";
-            this.labelOtrzymaneFizyczneObrazeniaWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelOtrzymaneFizyczneObrazeniaWartosc.TabIndex = 37;
-            // 
-            // labelNieuchronneObrazeniaZadaneGraczom
-            // 
-            this.labelNieuchronneObrazeniaZadaneGraczom.AutoSize = true;
-            this.labelNieuchronneObrazeniaZadaneGraczom.Location = new System.Drawing.Point(336, 334);
-            this.labelNieuchronneObrazeniaZadaneGraczom.Name = "labelNieuchronneObrazeniaZadaneGraczom";
-            this.labelNieuchronneObrazeniaZadaneGraczom.Size = new System.Drawing.Size(273, 17);
-            this.labelNieuchronneObrazeniaZadaneGraczom.TabIndex = 38;
-            this.labelNieuchronneObrazeniaZadaneGraczom.Text = "Nieuchronne obrażenia zadane graczom: ";
-            // 
-            // labelCalkowitaIloscObrazenPotworom
-            // 
-            this.labelCalkowitaIloscObrazenPotworom.AutoSize = true;
-            this.labelCalkowitaIloscObrazenPotworom.Location = new System.Drawing.Point(336, 317);
-            this.labelCalkowitaIloscObrazenPotworom.Name = "labelCalkowitaIloscObrazenPotworom";
-            this.labelCalkowitaIloscObrazenPotworom.Size = new System.Drawing.Size(224, 17);
-            this.labelCalkowitaIloscObrazenPotworom.TabIndex = 39;
-            this.labelCalkowitaIloscObrazenPotworom.Text = "Całkowita ilość obrażen potworom:";
-            // 
-            // labelFizyczneObrazeniaZadanePotworom
-            // 
-            this.labelFizyczneObrazeniaZadanePotworom.AutoSize = true;
-            this.labelFizyczneObrazeniaZadanePotworom.Location = new System.Drawing.Point(336, 300);
-            this.labelFizyczneObrazeniaZadanePotworom.Name = "labelFizyczneObrazeniaZadanePotworom";
-            this.labelFizyczneObrazeniaZadanePotworom.Size = new System.Drawing.Size(250, 17);
-            this.labelFizyczneObrazeniaZadanePotworom.TabIndex = 40;
-            this.labelFizyczneObrazeniaZadanePotworom.Text = "Fizyczne obrażenia zadane potworom:";
-            // 
-            // labelMagiczneObrazeniaZadanePotworom
-            // 
-            this.labelMagiczneObrazeniaZadanePotworom.AutoSize = true;
-            this.labelMagiczneObrazeniaZadanePotworom.Location = new System.Drawing.Point(336, 283);
-            this.labelMagiczneObrazeniaZadanePotworom.Name = "labelMagiczneObrazeniaZadanePotworom";
-            this.labelMagiczneObrazeniaZadanePotworom.Size = new System.Drawing.Size(255, 17);
-            this.labelMagiczneObrazeniaZadanePotworom.TabIndex = 41;
-            this.labelMagiczneObrazeniaZadanePotworom.Text = "Magiczne obrażenia zadane potworom:";
-            // 
-            // labelOgolnaIloscHPWyleczona
-            // 
-            this.labelOgolnaIloscHPWyleczona.AutoSize = true;
-            this.labelOgolnaIloscHPWyleczona.Location = new System.Drawing.Point(336, 249);
-            this.labelOgolnaIloscHPWyleczona.Name = "labelOgolnaIloscHPWyleczona";
-            this.labelOgolnaIloscHPWyleczona.Size = new System.Drawing.Size(182, 17);
-            this.labelOgolnaIloscHPWyleczona.TabIndex = 42;
-            this.labelOgolnaIloscHPWyleczona.Text = "Ogólna ilość HP wyleczona:";
-            // 
-            // labelOtrzymaneMagiczneObrazeniaWartosc
-            // 
-            this.labelOtrzymaneMagiczneObrazeniaWartosc.AutoSize = true;
-            this.labelOtrzymaneMagiczneObrazeniaWartosc.Location = new System.Drawing.Point(225, 419);
-            this.labelOtrzymaneMagiczneObrazeniaWartosc.Name = "labelOtrzymaneMagiczneObrazeniaWartosc";
-            this.labelOtrzymaneMagiczneObrazeniaWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelOtrzymaneMagiczneObrazeniaWartosc.TabIndex = 43;
-            // 
-            // labelMagiczneObrazeniaZadaneGraczomWartosc
-            // 
-            this.labelMagiczneObrazeniaZadaneGraczomWartosc.AutoSize = true;
-            this.labelMagiczneObrazeniaZadaneGraczomWartosc.Location = new System.Drawing.Point(261, 385);
-            this.labelMagiczneObrazeniaZadaneGraczomWartosc.Name = "labelMagiczneObrazeniaZadaneGraczomWartosc";
-            this.labelMagiczneObrazeniaZadaneGraczomWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelMagiczneObrazeniaZadaneGraczomWartosc.TabIndex = 44;
-            // 
-            // labelFizyczneObrazeniaZadaneGraczomWartosc
-            // 
-            this.labelFizyczneObrazeniaZadaneGraczomWartosc.AutoSize = true;
-            this.labelFizyczneObrazeniaZadaneGraczomWartosc.Location = new System.Drawing.Point(260, 368);
-            this.labelFizyczneObrazeniaZadaneGraczomWartosc.Name = "labelFizyczneObrazeniaZadaneGraczomWartosc";
-            this.labelFizyczneObrazeniaZadaneGraczomWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelFizyczneObrazeniaZadaneGraczomWartosc.TabIndex = 45;
-            // 
-            // labelOtrzymaneMagiczneObrazenia
-            // 
-            this.labelOtrzymaneMagiczneObrazenia.AutoSize = true;
-            this.labelOtrzymaneMagiczneObrazenia.Location = new System.Drawing.Point(7, 419);
-            this.labelOtrzymaneMagiczneObrazenia.Name = "labelOtrzymaneMagiczneObrazenia";
-            this.labelOtrzymaneMagiczneObrazenia.Size = new System.Drawing.Size(212, 17);
-            this.labelOtrzymaneMagiczneObrazenia.TabIndex = 46;
-            this.labelOtrzymaneMagiczneObrazenia.Text = "Otrzymane magiczne obrażenia:";
-            // 
-            // labelOtrzymaneFizyczneObrazenia
-            // 
-            this.labelOtrzymaneFizyczneObrazenia.AutoSize = true;
-            this.labelOtrzymaneFizyczneObrazenia.Location = new System.Drawing.Point(7, 402);
-            this.labelOtrzymaneFizyczneObrazenia.Name = "labelOtrzymaneFizyczneObrazenia";
-            this.labelOtrzymaneFizyczneObrazenia.Size = new System.Drawing.Size(203, 17);
-            this.labelOtrzymaneFizyczneObrazenia.TabIndex = 47;
-            this.labelOtrzymaneFizyczneObrazenia.Text = "Otrzymane fizyczne obrażenia:";
-            // 
-            // labelMagiczneObrazeniaZadaneGraczom
-            // 
-            this.labelMagiczneObrazeniaZadaneGraczom.AutoSize = true;
-            this.labelMagiczneObrazeniaZadaneGraczom.Location = new System.Drawing.Point(7, 385);
-            this.labelMagiczneObrazeniaZadaneGraczom.Name = "labelMagiczneObrazeniaZadaneGraczom";
-            this.labelMagiczneObrazeniaZadaneGraczom.Size = new System.Drawing.Size(248, 17);
-            this.labelMagiczneObrazeniaZadaneGraczom.TabIndex = 48;
-            this.labelMagiczneObrazeniaZadaneGraczom.Text = "Magiczne obrażenia zadane graczom:";
-            // 
-            // labelCzasGryWartosc
-            // 
-            this.labelCzasGryWartosc.AutoSize = true;
-            this.labelCzasGryWartosc.Location = new System.Drawing.Point(409, 232);
-            this.labelCzasGryWartosc.Name = "labelCzasGryWartosc";
-            this.labelCzasGryWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelCzasGryWartosc.TabIndex = 49;
-            // 
-            // labelOgolnaIloscHPWyleczonaWartosc
-            // 
-            this.labelOgolnaIloscHPWyleczonaWartosc.AutoSize = true;
-            this.labelOgolnaIloscHPWyleczonaWartosc.Location = new System.Drawing.Point(521, 249);
-            this.labelOgolnaIloscHPWyleczonaWartosc.Name = "labelOgolnaIloscHPWyleczonaWartosc";
-            this.labelOgolnaIloscHPWyleczonaWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelOgolnaIloscHPWyleczonaWartosc.TabIndex = 50;
-            // 
-            // labelKupionychWardowWartosc
-            // 
-            this.labelKupionychWardowWartosc.AutoSize = true;
-            this.labelKupionychWardowWartosc.Location = new System.Drawing.Point(471, 266);
-            this.labelKupionychWardowWartosc.Name = "labelKupionychWardowWartosc";
-            this.labelKupionychWardowWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelKupionychWardowWartosc.TabIndex = 51;
-            // 
-            // labelMagiczneObrazeniaZadanePotworomWartosc
-            // 
-            this.labelMagiczneObrazeniaZadanePotworomWartosc.AutoSize = true;
-            this.labelMagiczneObrazeniaZadanePotworomWartosc.Location = new System.Drawing.Point(597, 283);
-            this.labelMagiczneObrazeniaZadanePotworomWartosc.Name = "labelMagiczneObrazeniaZadanePotworomWartosc";
-            this.labelMagiczneObrazeniaZadanePotworomWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelMagiczneObrazeniaZadanePotworomWartosc.TabIndex = 52;
-            // 
-            // labelFizyczneObrazeniaZadanePotworomWartosc
-            // 
-            this.labelFizyczneObrazeniaZadanePotworomWartosc.AutoSize = true;
-            this.labelFizyczneObrazeniaZadanePotworomWartosc.Location = new System.Drawing.Point(592, 300);
-            this.labelFizyczneObrazeniaZadanePotworomWartosc.Name = "labelFizyczneObrazeniaZadanePotworomWartosc";
-            this.labelFizyczneObrazeniaZadanePotworomWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelFizyczneObrazeniaZadanePotworomWartosc.TabIndex = 53;
-            // 
-            // labelCalkowitaIloscObrazenPotworomWartosc
-            // 
-            this.labelCalkowitaIloscObrazenPotworomWartosc.AutoSize = true;
-            this.labelCalkowitaIloscObrazenPotworomWartosc.Location = new System.Drawing.Point(563, 317);
-            this.labelCalkowitaIloscObrazenPotworomWartosc.Name = "labelCalkowitaIloscObrazenPotworomWartosc";
-            this.labelCalkowitaIloscObrazenPotworomWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelCalkowitaIloscObrazenPotworomWartosc.TabIndex = 54;
-            // 
-            // labelNieuchronneObrazeniaZadaneGraczomWartosc
-            // 
-            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.AutoSize = true;
-            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.Location = new System.Drawing.Point(615, 334);
-            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.Name = "labelNieuchronneObrazeniaZadaneGraczomWartosc";
-            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelNieuchronneObrazeniaZadaneGraczomWartosc.TabIndex = 55;
-            // 
-            // labelNieuchronneObrazeniaZadanePotworomWartosc
-            // 
-            this.labelNieuchronneObrazeniaZadanePotworomWartosc.AutoSize = true;
-            this.labelNieuchronneObrazeniaZadanePotworomWartosc.Location = new System.Drawing.Point(615, 351);
-            this.labelNieuchronneObrazeniaZadanePotworomWartosc.Name = "labelNieuchronneObrazeniaZadanePotworomWartosc";
-            this.labelNieuchronneObrazeniaZadanePotworomWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelNieuchronneObrazeniaZadanePotworomWartosc.TabIndex = 56;
-            // 
-            // labelOtrzymaneNieuchronneObrazeniaWartosc
-            // 
-            this.labelOtrzymaneNieuchronneObrazeniaWartosc.AutoSize = true;
-            this.labelOtrzymaneNieuchronneObrazeniaWartosc.Location = new System.Drawing.Point(566, 368);
-            this.labelOtrzymaneNieuchronneObrazeniaWartosc.Name = "labelOtrzymaneNieuchronneObrazeniaWartosc";
-            this.labelOtrzymaneNieuchronneObrazeniaWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelOtrzymaneNieuchronneObrazeniaWartosc.TabIndex = 57;
-            // 
-            // labelZniszczoneWardyWartosc
-            // 
-            this.labelZniszczoneWardyWartosc.AutoSize = true;
-            this.labelZniszczoneWardyWartosc.Location = new System.Drawing.Point(467, 385);
-            this.labelZniszczoneWardyWartosc.Name = "labelZniszczoneWardyWartosc";
-            this.labelZniszczoneWardyWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelZniszczoneWardyWartosc.TabIndex = 58;
-            // 
-            // labelPostawioneWardyWartosc
-            // 
-            this.labelPostawioneWardyWartosc.AutoSize = true;
-            this.labelPostawioneWardyWartosc.Location = new System.Drawing.Point(467, 402);
-            this.labelPostawioneWardyWartosc.Name = "labelPostawioneWardyWartosc";
-            this.labelPostawioneWardyWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelPostawioneWardyWartosc.TabIndex = 59;
-            // 
-            // labelCalkowityCzasZadanychCCWartosc
-            // 
-            this.labelCalkowityCzasZadanychCCWartosc.AutoSize = true;
-            this.labelCalkowityCzasZadanychCCWartosc.Location = new System.Drawing.Point(532, 419);
-            this.labelCalkowityCzasZadanychCCWartosc.Name = "labelCalkowityCzasZadanychCCWartosc";
-            this.labelCalkowityCzasZadanychCCWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelCalkowityCzasZadanychCCWartosc.TabIndex = 60;
-            // 
-            // pictureBoxSpell1
-            // 
-            this.pictureBoxSpell1.Location = new System.Drawing.Point(175, 130);
-            this.pictureBoxSpell1.Name = "pictureBoxSpell1";
-            this.pictureBoxSpell1.Size = new System.Drawing.Size(66, 58);
-            this.pictureBoxSpell1.TabIndex = 61;
-            this.pictureBoxSpell1.TabStop = false;
-            // 
-            // pictureBoxSpell2
-            // 
-            this.pictureBoxSpell2.Location = new System.Drawing.Point(247, 130);
-            this.pictureBoxSpell2.Name = "pictureBoxSpell2";
-            this.pictureBoxSpell2.Size = new System.Drawing.Size(66, 58);
-            this.pictureBoxSpell2.TabIndex = 62;
-            this.pictureBoxSpell2.TabStop = false;
+            // labelKills
+            // 
+            this.labelKills.AutoSize = true;
+            this.labelKills.Location = new System.Drawing.Point(175, 44);
+            this.labelKills.Name = "labelKills";
+            this.labelKills.Size = new System.Drawing.Size(33, 17);
+            this.labelKills.TabIndex = 63;
+            this.labelKills.Text = "Kills";
+            // 
+            // labelDeaths
+            // 
+            this.labelDeaths.AutoSize = true;
+            this.labelDeaths.Location = new System.Drawing.Point(209, 44);
+            this.labelDeaths.Name = "labelDeaths";
+            this.labelDeaths.Size = new System.Drawing.Size(53, 17);
+            this.labelDeaths.TabIndex = 64;
+            this.labelDeaths.Text = "Deaths";
+            // 
+            // labelAsysty
+            // 
+            this.labelAsysty.AutoSize = true;
+            this.labelAsysty.Location = new System.Drawing.Point(269, 44);
+            this.labelAsysty.Name = "labelAsysty";
+            this.labelAsysty.Size = new System.Drawing.Size(52, 17);
+            this.labelAsysty.TabIndex = 65;
+            this.labelAsysty.Text = "Assists";
+            // 
+            // labelKillsWartosc
+            // 
+            this.labelKillsWartosc.AutoSize = true;
+            this.labelKillsWartosc.Location = new System.Drawing.Point(187, 60);
+            this.labelKillsWartosc.Name = "labelKillsWartosc";
+            this.labelKillsWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelKillsWartosc.TabIndex = 66;
+            // 
+            // labelDeathsWartosc
+            // 
+            this.labelDeathsWartosc.AutoSize = true;
+            this.labelDeathsWartosc.Location = new System.Drawing.Point(225, 61);
+            this.labelDeathsWartosc.Name = "labelDeathsWartosc";
+            this.labelDeathsWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelDeathsWartosc.TabIndex = 67;
+            // 
+            // labelAssistsWartosc
+            // 
+            this.labelAssistsWartosc.AutoSize = true;
+            this.labelAssistsWartosc.Location = new System.Drawing.Point(289, 61);
+            this.labelAssistsWartosc.Name = "labelAssistsWartosc";
+            this.labelAssistsWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelAssistsWartosc.TabIndex = 68;
             // 
             // userControlGra
             // 
@@ -744,8 +807,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem6)).EndInit();
             this.groupBoxNazwaGracza.ResumeLayout(false);
             this.groupBoxNazwaGracza.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpell1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpell2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSpell1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -816,6 +879,12 @@
         private System.Windows.Forms.Label labelFizyczneObrazeniaZadaneGraczom;
         private System.Windows.Forms.PictureBox pictureBoxSpell2;
         private System.Windows.Forms.PictureBox pictureBoxSpell1;
+        private System.Windows.Forms.Label labelAsysty;
+        private System.Windows.Forms.Label labelDeaths;
+        private System.Windows.Forms.Label labelKills;
+        private System.Windows.Forms.Label labelAssistsWartosc;
+        private System.Windows.Forms.Label labelDeathsWartosc;
+        private System.Windows.Forms.Label labelKillsWartosc;
 
     }
 }
