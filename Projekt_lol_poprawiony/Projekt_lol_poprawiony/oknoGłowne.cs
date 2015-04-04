@@ -66,7 +66,7 @@ namespace Projekt_lol_poprawiony
                             {
                                 championId = postacJson.id,
                                 name = postacJson.name,
-                                ikona = @"C:\Users\Krzysiek\Documents\GitHub\projekt_lol_poprawiona\IkonyPostaci\" + postacJson.key + ".png",
+                                ikona = @"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\IkonyPostaci\" + postacJson.key + ".png",
                             };
 
                             KlientWeb.Polaczenie.DownloadFile("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/" + postacJson.key + ".png", postac.ikona);
@@ -133,7 +133,7 @@ namespace Projekt_lol_poprawiony
                 IkonaPrzedmiotu ikonaPrzedmiotu = new IkonaPrzedmiotu()
                     {
                         itemId = item,
-                        ikona = @"C:\Users\Krzysiek\Documents\GitHub\projekt_lol_poprawiona\IkonyPrzedmiotow\" + item + ".png",
+                        ikona = @"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\IkonyPrzedmiotow\" + item + ".png",
                     };
 
                 KlientWeb.Polaczenie.DownloadFile("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/" + item + ".png", ikonaPrzedmiotu.ikona);
@@ -158,6 +158,7 @@ namespace Projekt_lol_poprawiony
             foreach(Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d=>d.timePlayed))
             {
                 userControlGra wyswietlanaGra = new userControlGra(gra);
+                wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
                 wyswietlanaGra.Tag = i++;
                 flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
             }
@@ -167,5 +168,6 @@ namespace Projekt_lol_poprawiony
         {
             wyswietlGry();
         }
+
     }
 }

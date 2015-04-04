@@ -13,7 +13,7 @@ namespace Projekt_lol_poprawiony
     public partial class userControlGra : UserControl
     {
         private Gry gra;
-
+        private userControlGra uc;
         public userControlGra()
         {
             InitializeComponent();
@@ -24,6 +24,9 @@ namespace Projekt_lol_poprawiony
             this.gra = gra;
             InitializeComponent();
 
+            Image spell1 = Image.FromFile(@"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\ikonki\"+gra.spell1 + ".png");
+            Image spell2 = Image.FromFile(@"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\ikonki\" + gra.spell2 + ".png");
+
             groupBoxNazwaGracza.Text = this.gra.Gracz.name;
             picturePostac.ImageLocation = this.gra.Postac.ikona;
             pictureBoxItem0.ImageLocation = this.gra.IkonaPrzedmiotu.ikona;
@@ -33,6 +36,8 @@ namespace Projekt_lol_poprawiony
             pictureBoxItem4.ImageLocation = this.gra.IkonaPrzedmiotu4.ikona;
             pictureBoxItem5.ImageLocation = this.gra.IkonaPrzedmiotu5.ikona;
             pictureBoxItem6.ImageLocation = this.gra.IkonaPrzedmiotu6.ikona;
+            pictureBoxSpell1.Image = spell1;
+            pictureBoxSpell2.Image = spell2;
             if(gra.win)
             {
                 groupBoxNazwaGracza.BackColor = Color.ForestGreen;
@@ -44,6 +49,51 @@ namespace Projekt_lol_poprawiony
             labelLevel.Text = labelLevel.Text + gra.level;
             labelKDA.Text =labelKDA.Text+ gra.championsKilled + "/" + gra.assists + "/" + gra.numDeaths;
             labelMiniony.Text =labelMiniony.Text + gra.minionsKilled.ToString();
+            labelZdobyteIPWartosc.Text = labelZdobyteIPWartosc.Text + gra.ipEarned.ToString();
+            labelZdobyteZlotoWartosc.Text = labelZdobyteZlotoWartosc.Text + gra.goldEarned.ToString();
+            labelDataGryWartosc.Text = labelDataGryWartosc.Text + gra.createDate.ToString();
+            labelZadaneCalkowiteObrazeniaWartosc.Text = labelZadaneCalkowiteObrazeniaWartosc.Text + gra.totalDamageDealt.ToString();
+            labelOtrzymaneCalkowiteObrazeniaWartosc.Text = labelOtrzymaneCalkowiteObrazeniaWartosc.Text + gra.totalDamageTaken.ToString();
+            if(gra.team == 100)
+            {
+                labelDruzynaWartosc.Text = labelDruzynaWartosc.Text + "Niebieska";
+            }
+            else
+            {
+                labelDruzynaWartosc.Text = labelDruzynaWartosc.Text + "Czerwona";
+            }
+            labelNajwiekszeWielobojstwoWartosc.Text = labelNajwiekszeWielobojstwoWartosc.Text + gra.largestMultiKill.ToString();
+            labelZabiteNeutralneMinionyWartosc.Text = labelZabiteNeutralneMinionyWartosc.Text + gra.neutralMinionsKilled.ToString();
+            labelFizyczneObrazeniaZadaneGraczomWartosc.Text = labelFizyczneObrazeniaZadaneGraczomWartosc.Text + gra.physicalDamageDealtPlayer.ToString();
+            labelMagiczneObrazeniaZadaneGraczomWartosc.Text = labelMagiczneObrazeniaZadaneGraczomWartosc.Text + gra.magicDamageDealtPlayer.ToString();
+            labelOtrzymaneFizyczneObrazeniaWartosc.Text = labelOtrzymaneFizyczneObrazeniaWartosc.Text + gra.physicalDamageTaken.ToString();
+            labelOtrzymaneMagiczneObrazeniaWartosc.Text = labelOtrzymaneMagiczneObrazeniaWartosc.Text + gra.magicDamageTaken.ToString();
+            labelCzasGryWartosc.Text = labelCzasGryWartosc.Text + gra.timePlayed.ToString();
+            labelOgolnaIloscHPWyleczonaWartosc.Text = labelOgolnaIloscHPWyleczonaWartosc.Text + gra.totalHeal.ToString();
+            labelKupionychWardowWartosc.Text = labelKupionychWardowWartosc.Text + gra.sightWardsBought.ToString();
+            labelMagiczneObrazeniaZadanePotworomWartosc.Text = labelMagiczneObrazeniaZadanePotworomWartosc.Text + gra.magicDamageDealtToChampions.ToString();
+            labelFizyczneObrazeniaZadanePotworomWartosc.Text = labelFizyczneObrazeniaZadanePotworomWartosc.Text + gra.physicalDamageDealtToChampions.ToString();
+            labelCalkowitaIloscObrazenPotworomWartosc.Text = labelCalkowitaIloscObrazenPotworomWartosc.Text + gra.totalDamageDealtToChampions.ToString();
+            labelNieuchronneObrazeniaZadaneGraczomWartosc.Text = labelNieuchronneObrazeniaZadaneGraczomWartosc.Text + gra.trueDamageDealtPlayer.ToString();
+            labelNieuchronneObrazeniaZadanePotworomWartosc.Text = labelNieuchronneObrazeniaZadanePotworomWartosc.Text + gra.trueDamageDealtToChampions.ToString();
+            labelOtrzymaneNieuchronneObrazeniaWartosc.Text = labelOtrzymaneNieuchronneObrazeniaWartosc.Text + gra.trueDamageTaken.ToString();
+            labelZniszczoneWardyWartosc.Text = labelZniszczoneWardyWartosc.Text + gra.wardKilled.ToString();
+            labelPostawioneWardyWartosc.Text = labelPostawioneWardyWartosc.Text + gra.wardPlaced.ToString();
+            labelCalkowityCzasZadanychCCWartosc.Text = labelCalkowityCzasZadanychCCWartosc.Text + gra.totalTimeCrowdControlDealt.ToString();
         }
+
+
+        private void labelRozwin_Click(object sender, EventArgs e)
+        {
+            userControlGra uc = this;
+            uc.Size = new System.Drawing.Size(712, 478);
+        }
+
+        private void labelZwin_Click(object sender, EventArgs e)
+        {
+            userControlGra uc = this;
+            uc.Size = new System.Drawing.Size(712, 231);
+        }
+      
     }
 }
