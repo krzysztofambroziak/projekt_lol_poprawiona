@@ -150,57 +150,71 @@ namespace Projekt_lol_poprawiony
             oU.Show();
         }
 
-        private void wyswietlGry()
+        private void wyswietlGry(CheckBox CzasGry, CheckBox Champion)
         {
             flowLayoutPanelGry.Controls.Clear();
-            if (radioButtonKills.Checked == true)
+            int i = 0;
+            if (CzasGry.Checked == true && Champion.Checked == false)
             {
-                int i = 0;
-                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.championsKilled))
+                if (textBoxDo.Text == "" || textBoxOd.Text == "")
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                    wyswietlanaGra.Tag = i++;
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    MessageBox.Show("Nie uzupełnileś wszystkich pól");
                 }
-                
-            }
-            else if (radioButtonDeaths.Checked == true)
-            {
-                int i = 0;
-                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.numDeaths))
+                else
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                    wyswietlanaGra.Tag = i++;
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.timePlayed > Convert.ToInt32(textBoxOd.Text) && x.timePlayed < Convert.ToInt32(textBoxDo.Text)).OrderByDescending(d => d.timePlayed))
+                    {
+                        userControlGra wyswietlanaGra = new userControlGra(gra);
+                        wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                        wyswietlanaGra.Tag = i++;
+                        flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    }
                 }
             }
-            else if (radioButtonAssists.Checked == true)
+            else if(Champion.Checked == true && CzasGry.Checked == false)
             {
-                int i = 0;
-                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.assists))
+                if (textBoxChampion.Text == "")
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                    wyswietlanaGra.Tag = i++;
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    MessageBox.Show("Nie uzupełnileś wszystkich pól");
+                }
+                else
+                {
+                    foreach (Postac p in Baza.Polaczenie.Postacs.Where(b => b.name == textBoxChampion.Text))
+                    {
+
+                        foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.championId == p.championId).OrderByDescending(d => d.timePlayed))
+                        {
+                            userControlGra wyswietlanaGra = new userControlGra(gra);
+                            wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                            wyswietlanaGra.Tag = i++;
+                            flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                        }
+                    }
                 }
             }
-            else if (radioButtonZarobioneIP.Checked == true)
+            else if (Champion.Checked == true && CzasGry.Checked == true)
             {
-                int i = 0;
-                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.ipEarned))
+                if (textBoxChampion.Text == "" || textBoxDo.Text == "" || textBoxOd.Text == "")
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                    wyswietlanaGra.Tag = i++;
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    MessageBox.Show("Nie uzupełnileś wszystkich pól");
+                }
+                else
+                {
+                    foreach (Postac p in Baza.Polaczenie.Postacs.Where(b => b.name == textBoxChampion.Text))
+                    {
+
+                        foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.championId == p.championId && x.timePlayed > Convert.ToInt32(textBoxOd.Text) && x.timePlayed < Convert.ToInt32(textBoxDo.Text)).OrderByDescending(d => d.timePlayed))
+                        {
+                            userControlGra wyswietlanaGra = new userControlGra(gra);
+                            wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
+                            wyswietlanaGra.Tag = i++;
+                            flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                        }
+                    }
                 }
             }
-            else if (radioButtonCzasGry.Checked == true)
+            else
             {
-                int i = 0;
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.timePlayed))
                 {
                     userControlGra wyswietlanaGra = new userControlGra(gra);
@@ -208,35 +222,14 @@ namespace Projekt_lol_poprawiony
                     wyswietlanaGra.Tag = i++;
                     flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
                 }
-            }
-            else if (radioButtonObrazeniaZadane.Checked == true)
-            {
-                int i = 0;
-                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.totalDamageDealt))
-                {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                    wyswietlanaGra.Tag = i++;
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
-                }
-            }
-            else
-            {
-                int i = 0;
-                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.totalDamageTaken))
-                {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                    wyswietlanaGra.Tag = i++;
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
-                }
-            }
+            }      
         }
 
         private void buttonWyswietl_Click(object sender, EventArgs e)
         {
-            wyswietlGry();
+                wyswietlGry(checkBoxCzasGry,checkBoxChampion);
         }
+
 
 
     }

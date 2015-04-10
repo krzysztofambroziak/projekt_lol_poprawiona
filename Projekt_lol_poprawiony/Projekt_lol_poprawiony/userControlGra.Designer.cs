@@ -40,6 +40,12 @@
             this.labelKDA = new System.Windows.Forms.Label();
             this.labelMiniony = new System.Windows.Forms.Label();
             this.groupBoxNazwaGracza = new System.Windows.Forms.GroupBox();
+            this.labelAssistsWartosc = new System.Windows.Forms.Label();
+            this.labelDeathsWartosc = new System.Windows.Forms.Label();
+            this.labelKillsWartosc = new System.Windows.Forms.Label();
+            this.labelAsysty = new System.Windows.Forms.Label();
+            this.labelDeaths = new System.Windows.Forms.Label();
+            this.labelKills = new System.Windows.Forms.Label();
             this.pictureBoxSpell2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSpell1 = new System.Windows.Forms.PictureBox();
             this.labelCalkowityCzasZadanychCCWartosc = new System.Windows.Forms.Label();
@@ -84,20 +90,12 @@
             this.labelNajwiekszeWielobojstwoWartosc = new System.Windows.Forms.Label();
             this.labelZabiteNeutralneMiniony = new System.Windows.Forms.Label();
             this.labelZdobyteZlotoWartosc = new System.Windows.Forms.Label();
-            this.labelZwin = new System.Windows.Forms.Label();
             this.labelDataGryWartosc = new System.Windows.Forms.Label();
             this.labelDataGry = new System.Windows.Forms.Label();
             this.labelZdobyteZloto = new System.Windows.Forms.Label();
             this.labelZadaneCalkowiteObrazenia = new System.Windows.Forms.Label();
             this.labelZdobyteIPWartosc = new System.Windows.Forms.Label();
             this.labelZdobyteIP = new System.Windows.Forms.Label();
-            this.labelRozwin = new System.Windows.Forms.Label();
-            this.labelKills = new System.Windows.Forms.Label();
-            this.labelDeaths = new System.Windows.Forms.Label();
-            this.labelAsysty = new System.Windows.Forms.Label();
-            this.labelKillsWartosc = new System.Windows.Forms.Label();
-            this.labelDeathsWartosc = new System.Windows.Forms.Label();
-            this.labelAssistsWartosc = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picturePostac)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxItem5)).BeginInit();
@@ -266,14 +264,12 @@
             this.groupBoxNazwaGracza.Controls.Add(this.labelNajwiekszeWielobojstwoWartosc);
             this.groupBoxNazwaGracza.Controls.Add(this.labelZabiteNeutralneMiniony);
             this.groupBoxNazwaGracza.Controls.Add(this.labelZdobyteZlotoWartosc);
-            this.groupBoxNazwaGracza.Controls.Add(this.labelZwin);
             this.groupBoxNazwaGracza.Controls.Add(this.labelDataGryWartosc);
             this.groupBoxNazwaGracza.Controls.Add(this.labelDataGry);
             this.groupBoxNazwaGracza.Controls.Add(this.labelZdobyteZloto);
             this.groupBoxNazwaGracza.Controls.Add(this.labelZadaneCalkowiteObrazenia);
             this.groupBoxNazwaGracza.Controls.Add(this.labelZdobyteIPWartosc);
             this.groupBoxNazwaGracza.Controls.Add(this.labelZdobyteIP);
-            this.groupBoxNazwaGracza.Controls.Add(this.labelRozwin);
             this.groupBoxNazwaGracza.Controls.Add(this.labelMiniony);
             this.groupBoxNazwaGracza.Controls.Add(this.labelKDA);
             this.groupBoxNazwaGracza.Controls.Add(this.labelLevel);
@@ -289,10 +285,61 @@
             this.groupBoxNazwaGracza.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNazwaGracza.Name = "groupBoxNazwaGracza";
             this.groupBoxNazwaGracza.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxNazwaGracza.Size = new System.Drawing.Size(712, 478);
+            this.groupBoxNazwaGracza.Size = new System.Drawing.Size(716, 478);
             this.groupBoxNazwaGracza.TabIndex = 0;
             this.groupBoxNazwaGracza.TabStop = false;
             this.groupBoxNazwaGracza.Text = "groupBox1";
+            // 
+            // labelAssistsWartosc
+            // 
+            this.labelAssistsWartosc.AutoSize = true;
+            this.labelAssistsWartosc.Location = new System.Drawing.Point(289, 61);
+            this.labelAssistsWartosc.Name = "labelAssistsWartosc";
+            this.labelAssistsWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelAssistsWartosc.TabIndex = 68;
+            // 
+            // labelDeathsWartosc
+            // 
+            this.labelDeathsWartosc.AutoSize = true;
+            this.labelDeathsWartosc.Location = new System.Drawing.Point(225, 61);
+            this.labelDeathsWartosc.Name = "labelDeathsWartosc";
+            this.labelDeathsWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelDeathsWartosc.TabIndex = 67;
+            // 
+            // labelKillsWartosc
+            // 
+            this.labelKillsWartosc.AutoSize = true;
+            this.labelKillsWartosc.Location = new System.Drawing.Point(187, 60);
+            this.labelKillsWartosc.Name = "labelKillsWartosc";
+            this.labelKillsWartosc.Size = new System.Drawing.Size(0, 17);
+            this.labelKillsWartosc.TabIndex = 66;
+            // 
+            // labelAsysty
+            // 
+            this.labelAsysty.AutoSize = true;
+            this.labelAsysty.Location = new System.Drawing.Point(269, 44);
+            this.labelAsysty.Name = "labelAsysty";
+            this.labelAsysty.Size = new System.Drawing.Size(52, 17);
+            this.labelAsysty.TabIndex = 65;
+            this.labelAsysty.Text = "Assists";
+            // 
+            // labelDeaths
+            // 
+            this.labelDeaths.AutoSize = true;
+            this.labelDeaths.Location = new System.Drawing.Point(209, 44);
+            this.labelDeaths.Name = "labelDeaths";
+            this.labelDeaths.Size = new System.Drawing.Size(53, 17);
+            this.labelDeaths.TabIndex = 64;
+            this.labelDeaths.Text = "Deaths";
+            // 
+            // labelKills
+            // 
+            this.labelKills.AutoSize = true;
+            this.labelKills.Location = new System.Drawing.Point(175, 44);
+            this.labelKills.Name = "labelKills";
+            this.labelKills.Size = new System.Drawing.Size(33, 17);
+            this.labelKills.TabIndex = 63;
+            this.labelKills.Text = "Kills";
             // 
             // pictureBoxSpell2
             // 
@@ -666,16 +713,6 @@
             this.labelZdobyteZlotoWartosc.Size = new System.Drawing.Size(0, 17);
             this.labelZdobyteZlotoWartosc.TabIndex = 19;
             // 
-            // labelZwin
-            // 
-            this.labelZwin.AutoSize = true;
-            this.labelZwin.Location = new System.Drawing.Point(323, 457);
-            this.labelZwin.Name = "labelZwin";
-            this.labelZwin.Size = new System.Drawing.Size(37, 17);
-            this.labelZwin.TabIndex = 18;
-            this.labelZwin.Text = "Zwiń";
-            this.labelZwin.Click += new System.EventHandler(this.labelZwin_Click);
-            // 
             // labelDataGryWartosc
             // 
             this.labelDataGryWartosc.AutoSize = true;
@@ -728,67 +765,6 @@
             this.labelZdobyteIP.TabIndex = 12;
             this.labelZdobyteIP.Text = "Zdobyte IP:";
             // 
-            // labelRozwin
-            // 
-            this.labelRozwin.AutoSize = true;
-            this.labelRozwin.Location = new System.Drawing.Point(323, 206);
-            this.labelRozwin.Name = "labelRozwin";
-            this.labelRozwin.Size = new System.Drawing.Size(53, 17);
-            this.labelRozwin.TabIndex = 11;
-            this.labelRozwin.Text = "Rozwiń";
-            this.labelRozwin.Click += new System.EventHandler(this.labelRozwin_Click);
-            // 
-            // labelKills
-            // 
-            this.labelKills.AutoSize = true;
-            this.labelKills.Location = new System.Drawing.Point(175, 44);
-            this.labelKills.Name = "labelKills";
-            this.labelKills.Size = new System.Drawing.Size(33, 17);
-            this.labelKills.TabIndex = 63;
-            this.labelKills.Text = "Kills";
-            // 
-            // labelDeaths
-            // 
-            this.labelDeaths.AutoSize = true;
-            this.labelDeaths.Location = new System.Drawing.Point(209, 44);
-            this.labelDeaths.Name = "labelDeaths";
-            this.labelDeaths.Size = new System.Drawing.Size(53, 17);
-            this.labelDeaths.TabIndex = 64;
-            this.labelDeaths.Text = "Deaths";
-            // 
-            // labelAsysty
-            // 
-            this.labelAsysty.AutoSize = true;
-            this.labelAsysty.Location = new System.Drawing.Point(269, 44);
-            this.labelAsysty.Name = "labelAsysty";
-            this.labelAsysty.Size = new System.Drawing.Size(52, 17);
-            this.labelAsysty.TabIndex = 65;
-            this.labelAsysty.Text = "Assists";
-            // 
-            // labelKillsWartosc
-            // 
-            this.labelKillsWartosc.AutoSize = true;
-            this.labelKillsWartosc.Location = new System.Drawing.Point(187, 60);
-            this.labelKillsWartosc.Name = "labelKillsWartosc";
-            this.labelKillsWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelKillsWartosc.TabIndex = 66;
-            // 
-            // labelDeathsWartosc
-            // 
-            this.labelDeathsWartosc.AutoSize = true;
-            this.labelDeathsWartosc.Location = new System.Drawing.Point(225, 61);
-            this.labelDeathsWartosc.Name = "labelDeathsWartosc";
-            this.labelDeathsWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelDeathsWartosc.TabIndex = 67;
-            // 
-            // labelAssistsWartosc
-            // 
-            this.labelAssistsWartosc.AutoSize = true;
-            this.labelAssistsWartosc.Location = new System.Drawing.Point(289, 61);
-            this.labelAssistsWartosc.Name = "labelAssistsWartosc";
-            this.labelAssistsWartosc.Size = new System.Drawing.Size(0, 17);
-            this.labelAssistsWartosc.TabIndex = 68;
-            // 
             // userControlGra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -827,14 +803,12 @@
         private System.Windows.Forms.Label labelKDA;
         private System.Windows.Forms.Label labelMiniony;
         private System.Windows.Forms.GroupBox groupBoxNazwaGracza;
-        private System.Windows.Forms.Label labelRozwin;
         private System.Windows.Forms.Label labelDataGry;
         private System.Windows.Forms.Label labelZdobyteZloto;
         private System.Windows.Forms.Label labelZadaneCalkowiteObrazenia;
         private System.Windows.Forms.Label labelZdobyteIPWartosc;
         private System.Windows.Forms.Label labelZdobyteIP;
         private System.Windows.Forms.Label labelDataGryWartosc;
-        private System.Windows.Forms.Label labelZwin;
         private System.Windows.Forms.Label labelZadaneCalkowiteObrazeniaWartosc;
         private System.Windows.Forms.Label labelOtrzymaneCalkowiteObrazenia;
         private System.Windows.Forms.Label labelOtrzymaneCalkowiteObrazeniaWartosc;

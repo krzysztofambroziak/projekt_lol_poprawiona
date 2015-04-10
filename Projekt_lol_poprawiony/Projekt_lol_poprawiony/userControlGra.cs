@@ -17,13 +17,14 @@ namespace Projekt_lol_poprawiony
         public userControlGra()
         {
             InitializeComponent();
+
         }
 
         public userControlGra(Gry gra)
         {
             this.gra = gra;
             InitializeComponent();
-
+            groupBoxNazwaGracza.Click += groupBoxNazwaGracza_Click;
             Image spell1 = Image.FromFile(@"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\ikonki\"+gra.spell1 + ".png");
             Image spell2 = Image.FromFile(@"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\ikonki\" + gra.spell2 + ".png");
 
@@ -86,20 +87,24 @@ namespace Projekt_lol_poprawiony
             labelZniszczoneWardyWartosc.Text = labelZniszczoneWardyWartosc.Text + gra.wardKilled.ToString();
             labelPostawioneWardyWartosc.Text = labelPostawioneWardyWartosc.Text + gra.wardPlaced.ToString();
             labelCalkowityCzasZadanychCCWartosc.Text = labelCalkowityCzasZadanychCCWartosc.Text + gra.totalTimeCrowdControlDealt.ToString();
+
+            
         }
 
-
-        private void labelRozwin_Click(object sender, EventArgs e)
+        void groupBoxNazwaGracza_Click(object sender, EventArgs e)
         {
             userControlGra uc = this;
-            uc.Size = new System.Drawing.Size(712, 478);
+            if (uc.Height == 231)
+            {
+                uc.Size = new System.Drawing.Size(712, 478);
+            }
+            else
+            {
+                uc.Size = new System.Drawing.Size(712, 231);
+            }
+
         }
 
-        private void labelZwin_Click(object sender, EventArgs e)
-        {
-            userControlGra uc = this;
-            uc.Size = new System.Drawing.Size(712, 231);
-        }
       
     }
 }

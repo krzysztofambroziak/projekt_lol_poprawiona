@@ -26,4 +26,3 @@ C:\Users\Bartek\Desktop\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lo
 C:\Users\Bartek\Desktop\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\obj\Debug\Projekt_lol_poprawiony.oknoUsun.resources
 C:\Users\Bartek\Desktop\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\obj\Debug\Projekt_lol_poprawiony.Properties.Resources.resources
 C:\Users\Bartek\Desktop\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\obj\Debug\Projekt_lol_poprawiony.csproj.GenerateResource.Cache
-C:\Users\Bartek\Desktop\projekt_lol_poprawiona\Projekt_lol_poprawiony\Projekt_lol_poprawiony\obj\Debug\Projekt_lol_poprawiony.UserControlResztaGier.resources

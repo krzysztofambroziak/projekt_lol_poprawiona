@@ -82,17 +82,8 @@
     <Compile Include="userControlGra.Designer.cs">
       <DependentUpon>userControlGra.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlResztaGier.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlResztaGier.Designer.cs">
-      <DependentUpon>UserControlResztaGier.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="userControlGra.resx">
       <DependentUpon>userControlGra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlResztaGier.resx">
-      <DependentUpon>UserControlResztaGier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BazaLOL.dbml.layout">
       <DependentUpon>BazaLOL.dbml</DependentUpon>
