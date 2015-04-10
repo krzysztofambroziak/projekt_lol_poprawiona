@@ -33,16 +33,16 @@
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.buttonUsun = new System.Windows.Forms.Button();
             this.groupBoxOpcjeDodatkowe = new System.Windows.Forms.GroupBox();
+            this.labelOd = new System.Windows.Forms.Label();
+            this.labelDo = new System.Windows.Forms.Label();
+            this.textBoxChampion = new System.Windows.Forms.TextBox();
+            this.checkBoxChampion = new System.Windows.Forms.CheckBox();
+            this.checkBoxCzasGry = new System.Windows.Forms.CheckBox();
             this.labelFiltr = new System.Windows.Forms.Label();
             this.buttonWyswietl = new System.Windows.Forms.Button();
             this.buttonAktualizujDane = new System.Windows.Forms.Button();
-            this.checkBoxCzasGry = new System.Windows.Forms.CheckBox();
-            this.checkBoxChampion = new System.Windows.Forms.CheckBox();
-            this.textBoxOd = new System.Windows.Forms.TextBox();
-            this.textBoxChampion = new System.Windows.Forms.TextBox();
-            this.labelDo = new System.Windows.Forms.Label();
-            this.textBoxDo = new System.Windows.Forms.TextBox();
-            this.labelOd = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.groupBoxOpcjeDodatkowe.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,11 +91,11 @@
             // 
             // groupBoxOpcjeDodatkowe
             // 
+            this.groupBoxOpcjeDodatkowe.Controls.Add(this.dateTimePicker2);
+            this.groupBoxOpcjeDodatkowe.Controls.Add(this.dateTimePicker1);
             this.groupBoxOpcjeDodatkowe.Controls.Add(this.labelOd);
-            this.groupBoxOpcjeDodatkowe.Controls.Add(this.textBoxDo);
             this.groupBoxOpcjeDodatkowe.Controls.Add(this.labelDo);
             this.groupBoxOpcjeDodatkowe.Controls.Add(this.textBoxChampion);
-            this.groupBoxOpcjeDodatkowe.Controls.Add(this.textBoxOd);
             this.groupBoxOpcjeDodatkowe.Controls.Add(this.checkBoxChampion);
             this.groupBoxOpcjeDodatkowe.Controls.Add(this.checkBoxCzasGry);
             this.groupBoxOpcjeDodatkowe.Controls.Add(this.labelFiltr);
@@ -103,10 +103,58 @@
             this.groupBoxOpcjeDodatkowe.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxOpcjeDodatkowe.Name = "groupBoxOpcjeDodatkowe";
             this.groupBoxOpcjeDodatkowe.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxOpcjeDodatkowe.Size = new System.Drawing.Size(253, 167);
+            this.groupBoxOpcjeDodatkowe.Size = new System.Drawing.Size(340, 167);
             this.groupBoxOpcjeDodatkowe.TabIndex = 4;
             this.groupBoxOpcjeDodatkowe.TabStop = false;
             this.groupBoxOpcjeDodatkowe.Text = "Opcje Dodatkowe";
+            // 
+            // labelOd
+            // 
+            this.labelOd.AutoSize = true;
+            this.labelOd.Location = new System.Drawing.Point(93, 52);
+            this.labelOd.Name = "labelOd";
+            this.labelOd.Size = new System.Drawing.Size(24, 17);
+            this.labelOd.TabIndex = 8;
+            this.labelOd.Text = "od";
+            // 
+            // labelDo
+            // 
+            this.labelDo.AutoSize = true;
+            this.labelDo.Location = new System.Drawing.Point(93, 82);
+            this.labelDo.Name = "labelDo";
+            this.labelDo.Size = new System.Drawing.Size(24, 17);
+            this.labelDo.TabIndex = 6;
+            this.labelDo.Text = "do";
+            // 
+            // textBoxChampion
+            // 
+            this.textBoxChampion.Enabled = false;
+            this.textBoxChampion.Location = new System.Drawing.Point(106, 116);
+            this.textBoxChampion.Name = "textBoxChampion";
+            this.textBoxChampion.Size = new System.Drawing.Size(100, 22);
+            this.textBoxChampion.TabIndex = 5;
+            // 
+            // checkBoxChampion
+            // 
+            this.checkBoxChampion.AutoSize = true;
+            this.checkBoxChampion.Location = new System.Drawing.Point(7, 116);
+            this.checkBoxChampion.Name = "checkBoxChampion";
+            this.checkBoxChampion.Size = new System.Drawing.Size(93, 21);
+            this.checkBoxChampion.TabIndex = 3;
+            this.checkBoxChampion.Text = "Champion";
+            this.checkBoxChampion.UseVisualStyleBackColor = true;
+            this.checkBoxChampion.CheckedChanged += new System.EventHandler(this.checkBoxChampion_CheckedChanged);
+            // 
+            // checkBoxCzasGry
+            // 
+            this.checkBoxCzasGry.AutoSize = true;
+            this.checkBoxCzasGry.Location = new System.Drawing.Point(7, 64);
+            this.checkBoxCzasGry.Name = "checkBoxCzasGry";
+            this.checkBoxCzasGry.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxCzasGry.TabIndex = 2;
+            this.checkBoxCzasGry.Text = "Data gry";
+            this.checkBoxCzasGry.UseVisualStyleBackColor = true;
+            this.checkBoxCzasGry.CheckedChanged += new System.EventHandler(this.checkBoxCzasGry_CheckedChanged);
             // 
             // labelFiltr
             // 
@@ -139,70 +187,27 @@
             this.buttonAktualizujDane.UseVisualStyleBackColor = true;
             this.buttonAktualizujDane.Click += new System.EventHandler(this.buttonAktualizujDane_Click);
             // 
-            // checkBoxCzasGry
+            // dateTimePicker1
             // 
-            this.checkBoxCzasGry.AutoSize = true;
-            this.checkBoxCzasGry.Location = new System.Drawing.Point(8, 46);
-            this.checkBoxCzasGry.Name = "checkBoxCzasGry";
-            this.checkBoxCzasGry.Size = new System.Drawing.Size(85, 21);
-            this.checkBoxCzasGry.TabIndex = 2;
-            this.checkBoxCzasGry.Text = "Czas gry";
-            this.checkBoxCzasGry.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(123, 52);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 10;
             // 
-            // checkBoxChampion
+            // dateTimePicker2
             // 
-            this.checkBoxChampion.AutoSize = true;
-            this.checkBoxChampion.Location = new System.Drawing.Point(8, 74);
-            this.checkBoxChampion.Name = "checkBoxChampion";
-            this.checkBoxChampion.Size = new System.Drawing.Size(93, 21);
-            this.checkBoxChampion.TabIndex = 3;
-            this.checkBoxChampion.Text = "Champion";
-            this.checkBoxChampion.UseVisualStyleBackColor = true;
-            // 
-            // textBoxOd
-            // 
-            this.textBoxOd.Location = new System.Drawing.Point(136, 46);
-            this.textBoxOd.Name = "textBoxOd";
-            this.textBoxOd.Size = new System.Drawing.Size(36, 22);
-            this.textBoxOd.TabIndex = 4;
-            // 
-            // textBoxChampion
-            // 
-            this.textBoxChampion.Location = new System.Drawing.Point(113, 75);
-            this.textBoxChampion.Name = "textBoxChampion";
-            this.textBoxChampion.Size = new System.Drawing.Size(100, 22);
-            this.textBoxChampion.TabIndex = 5;
-            // 
-            // labelDo
-            // 
-            this.labelDo.AutoSize = true;
-            this.labelDo.Location = new System.Drawing.Point(178, 46);
-            this.labelDo.Name = "labelDo";
-            this.labelDo.Size = new System.Drawing.Size(24, 17);
-            this.labelDo.TabIndex = 6;
-            this.labelDo.Text = "do";
-            // 
-            // textBoxDo
-            // 
-            this.textBoxDo.Location = new System.Drawing.Point(208, 47);
-            this.textBoxDo.Name = "textBoxDo";
-            this.textBoxDo.Size = new System.Drawing.Size(36, 22);
-            this.textBoxDo.TabIndex = 7;
-            // 
-            // labelOd
-            // 
-            this.labelOd.AutoSize = true;
-            this.labelOd.Location = new System.Drawing.Point(106, 47);
-            this.labelOd.Name = "labelOd";
-            this.labelOd.Size = new System.Drawing.Size(24, 17);
-            this.labelOd.TabIndex = 8;
-            this.labelOd.Text = "od";
+            this.dateTimePicker2.Enabled = false;
+            this.dateTimePicker2.Location = new System.Drawing.Point(123, 82);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.TabIndex = 11;
             // 
             // oknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1053, 443);
+            this.ClientSize = new System.Drawing.Size(1143, 443);
             this.Controls.Add(this.buttonAktualizujDane);
             this.Controls.Add(this.buttonWyswietl);
             this.Controls.Add(this.groupBoxOpcjeDodatkowe);
@@ -230,12 +235,12 @@
         private System.Windows.Forms.Button buttonAktualizujDane;
         private System.Windows.Forms.Label labelFiltr;
         private System.Windows.Forms.Label labelOd;
-        private System.Windows.Forms.TextBox textBoxDo;
         private System.Windows.Forms.Label labelDo;
         private System.Windows.Forms.TextBox textBoxChampion;
-        private System.Windows.Forms.TextBox textBoxOd;
         private System.Windows.Forms.CheckBox checkBoxChampion;
         private System.Windows.Forms.CheckBox checkBoxCzasGry;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

@@ -17,8 +17,9 @@ namespace Projekt_lol_poprawiony
         {
             InitializeComponent();
             wczytajGraczy();
-        }
 
+        }
+        
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
             oknoDodaj oD = new oknoDodaj();
@@ -156,23 +157,19 @@ namespace Projekt_lol_poprawiony
             int i = 0;
             if (CzasGry.Checked == true && Champion.Checked == false)
             {
-                if (textBoxDo.Text == "" || textBoxOd.Text == "")
-                {
-                    MessageBox.Show("Nie uzupełnileś wszystkich pól");
-                }
-                else
-                {
-                    foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.timePlayed > Convert.ToInt32(textBoxOd.Text) && x.timePlayed < Convert.ToInt32(textBoxDo.Text)).OrderByDescending(d => d.timePlayed))
+                dateTimePicker1.Enabled = true;
+                dateTimePicker2.Enabled = true;
+                foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.createDate > ToUnixTime(Convert.ToDateTime(dateTimePicker1.Text)) && x.createDate < ToUnixTime(Convert.ToDateTime(dateTimePicker2.Text))).OrderByDescending(d => d.timePlayed))
                     {
                         userControlGra wyswietlanaGra = new userControlGra(gra);
                         wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
                         wyswietlanaGra.Tag = i++;
                         flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
                     }
-                }
             }
             else if(Champion.Checked == true && CzasGry.Checked == false)
             {
+                textBoxChampion.Enabled = true;
                 if (textBoxChampion.Text == "")
                 {
                     MessageBox.Show("Nie uzupełnileś wszystkich pól");
@@ -194,7 +191,8 @@ namespace Projekt_lol_poprawiony
             }
             else if (Champion.Checked == true && CzasGry.Checked == true)
             {
-                if (textBoxChampion.Text == "" || textBoxDo.Text == "" || textBoxOd.Text == "")
+                
+                if (textBoxChampion.Text == "")
                 {
                     MessageBox.Show("Nie uzupełnileś wszystkich pól");
                 }
@@ -203,7 +201,7 @@ namespace Projekt_lol_poprawiony
                     foreach (Postac p in Baza.Polaczenie.Postacs.Where(b => b.name == textBoxChampion.Text))
                     {
 
-                        foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.championId == p.championId && x.timePlayed > Convert.ToInt32(textBoxOd.Text) && x.timePlayed < Convert.ToInt32(textBoxDo.Text)).OrderByDescending(d => d.timePlayed))
+                        foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.championId == p.championId && x.createDate > ToUnixTime(Convert.ToDateTime(dateTimePicker1.Text)) && x.createDate < ToUnixTime(Convert.ToDateTime(dateTimePicker2.Text))).OrderByDescending(d => d.timePlayed))
                         {
                             userControlGra wyswietlanaGra = new userControlGra(gra);
                             wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
@@ -229,7 +227,42 @@ namespace Projekt_lol_poprawiony
         {
                 wyswietlGry(checkBoxCzasGry,checkBoxChampion);
         }
+        public DateTime FromUnixTime(long unixTime)
+        {
+            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return epoch.AddMilliseconds(unixTime);
+        }
+        public long ToUnixTime( DateTime date)
+        {
+            var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+            return Convert.ToInt64((date - epoch).TotalMilliseconds);
+        }
 
+        private void checkBoxCzasGry_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxCzasGry.Checked == true)
+            {
+                dateTimePicker1.Enabled = true;
+                dateTimePicker2.Enabled = true;
+            }
+            else
+            {
+                dateTimePicker1.Enabled = false;
+                dateTimePicker2.Enabled = false;
+            }
+        }
+
+        private void checkBoxChampion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxChampion.Checked == true)
+            {
+                textBoxChampion.Enabled = true;
+            }
+            else
+            {
+                textBoxChampion.Enabled = false;
+            }
+        }
 
 
     }

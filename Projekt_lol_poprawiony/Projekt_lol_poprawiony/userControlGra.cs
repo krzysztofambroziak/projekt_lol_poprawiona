@@ -56,7 +56,7 @@ namespace Projekt_lol_poprawiony
             labelMiniony.Text =labelMiniony.Text + gra.minionsKilled.ToString();
             labelZdobyteIPWartosc.Text = labelZdobyteIPWartosc.Text + gra.ipEarned.ToString();
             labelZdobyteZlotoWartosc.Text = labelZdobyteZlotoWartosc.Text + gra.goldEarned.ToString();
-            labelDataGryWartosc.Text = labelDataGryWartosc.Text + gra.createDate.ToString();
+            labelDataGryWartosc.Text = labelDataGryWartosc.Text + FromUnixTime(Convert.ToInt64(gra.createDate)); //gra.createDate.ToString();
             labelZadaneCalkowiteObrazeniaWartosc.Text = labelZadaneCalkowiteObrazeniaWartosc.Text + gra.totalDamageDealt.ToString();
             labelOtrzymaneCalkowiteObrazeniaWartosc.Text = labelOtrzymaneCalkowiteObrazeniaWartosc.Text + gra.totalDamageTaken.ToString();
             if(gra.team == 100)
@@ -103,6 +103,11 @@ namespace Projekt_lol_poprawiony
                 uc.Size = new System.Drawing.Size(712, 231);
             }
 
+        }
+        public DateTime FromUnixTime(long unixTime)
+        {
+            var epoch = new DateTime(1970,1,1, 0, 0, 0,  DateTimeKind.Utc);
+            return epoch.AddMilliseconds(unixTime);
         }
 
       
