@@ -52,7 +52,7 @@ namespace Projekt_lol_poprawiony
                     IkonaGracza ikonaGracza = new IkonaGracza()
                     {
                         profileIconId = graczJson.ElementAt(0).Value.profileIconId,
-                        ikona = @"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\IkonyGraczy\" + graczJson.ElementAt(0).Value.profileIconId + ".png",
+                        ikona = @Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\Projekt_LOL\\IkonyGraczy\\" + graczJson.ElementAt(0).Value.profileIconId + ".png",
                     };
 
                     KlientWeb.Polaczenie.DownloadFile("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/" + graczJson.ElementAt(0).Value.profileIconId + ".png", ikonaGracza.ikona);

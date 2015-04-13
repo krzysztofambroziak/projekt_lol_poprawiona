@@ -16,10 +16,12 @@ namespace Projekt_lol_poprawiony
         public oknoGlowne()
         {
             InitializeComponent();
-            wczytajGraczy();
 
+            wczytajGraczy();
+            wczytajPostacie();
+            ustawDaty();
         }
-        
+
         private void buttonDodaj_Click(object sender, EventArgs e)
         {
             oknoDodaj oD = new oknoDodaj();
@@ -67,7 +69,7 @@ namespace Projekt_lol_poprawiony
                             {
                                 championId = postacJson.id,
                                 name = postacJson.name,
-                                ikona = @"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\IkonyPostaci\" + postacJson.key + ".png",
+                                ikona = @Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\Projekt_LOL\\IkonyPostaci\\" + postacJson.key + ".png",
                             };
 
                             KlientWeb.Polaczenie.DownloadFile("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/" + postacJson.key + ".png", postac.ikona);
@@ -126,6 +128,8 @@ namespace Projekt_lol_poprawiony
                     }
                 }
             }
+            wczytajPostacie();
+            ustawDaty();
         }
         void dodajIkonePrzedmiotu(int item)
         {
@@ -134,7 +138,7 @@ namespace Projekt_lol_poprawiony
                 IkonaPrzedmiotu ikonaPrzedmiotu = new IkonaPrzedmiotu()
                     {
                         itemId = item,
-                        ikona = @"C:\Users\Bartek\Desktop\projekt_lol_poprawiona\IkonyPrzedmiotow\" + item + ".png",
+                        ikona = @Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)+"\\Projekt_LOL\\IkonyPrzedmiotow\\" + item + ".png",
                     };
 
                 KlientWeb.Polaczenie.DownloadFile("http://ddragon.leagueoflegends.com/cdn/5.2.1/img/item/" + item + ".png", ikonaPrzedmiotu.ikona);
@@ -151,119 +155,84 @@ namespace Projekt_lol_poprawiony
             oU.Show();
         }
 
-        private void wyswietlGry(CheckBox CzasGry, CheckBox Champion)
+        private void wyswietlGry()
         {
             flowLayoutPanelGry.Controls.Clear();
-            int i = 0;
-            if (CzasGry.Checked == true && Champion.Checked == false)
-            {
-                dateTimePicker1.Enabled = true;
-                dateTimePicker2.Enabled = true;
-                foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.createDate > ToUnixTime(Convert.ToDateTime(dateTimePicker1.Text)) && x.createDate < ToUnixTime(Convert.ToDateTime(dateTimePicker2.Text))).OrderByDescending(d => d.timePlayed))
-                    {
-                        userControlGra wyswietlanaGra = new userControlGra(gra);
-                        wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                        wyswietlanaGra.Tag = i++;
-                        flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
-                    }
-            }
-            else if(Champion.Checked == true && CzasGry.Checked == false)
-            {
-                textBoxChampion.Enabled = true;
-                if (textBoxChampion.Text == "")
-                {
-                    MessageBox.Show("Nie uzupełnileś wszystkich pól");
-                }
-                else
-                {
-                    foreach (Postac p in Baza.Polaczenie.Postacs.Where(b => b.name == textBoxChampion.Text))
-                    {
-
-                        foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.championId == p.championId).OrderByDescending(d => d.timePlayed))
-                        {
-                            userControlGra wyswietlanaGra = new userControlGra(gra);
-                            wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                            wyswietlanaGra.Tag = i++;
-                            flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
-                        }
-                    }
-                }
-            }
-            else if (Champion.Checked == true && CzasGry.Checked == true)
-            {
-                
-                if (textBoxChampion.Text == "")
-                {
-                    MessageBox.Show("Nie uzupełnileś wszystkich pól");
-                }
-                else
-                {
-                    foreach (Postac p in Baza.Polaczenie.Postacs.Where(b => b.name == textBoxChampion.Text))
-                    {
-
-                        foreach (Gry gra in Baza.Polaczenie.Gries.Where(x => x.championId == p.championId && x.createDate > ToUnixTime(Convert.ToDateTime(dateTimePicker1.Text)) && x.createDate < ToUnixTime(Convert.ToDateTime(dateTimePicker2.Text))).OrderByDescending(d => d.timePlayed))
-                        {
-                            userControlGra wyswietlanaGra = new userControlGra(gra);
-                            wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                            wyswietlanaGra.Tag = i++;
-                            flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
-                        }
-                    }
-                }
-            }
-            else
+            if (radioButtonDataUtworzenia.Checked)
             {
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.timePlayed))
                 {
+                    filtrujGry(gra);
+                }
+            }
+            else if(radioButtonZabojstwa.Checked)
+            {
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.championsKilled))
+                {
+                    filtrujGry(gra);
+                }
+            }
+            else if (radioButtonZgony.Checked)
+            {
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.numDeaths))
+                {
+                    filtrujGry(gra);
+                }
+            }
+        }
+
+        void filtrujGry(Gry gra)
+        {
+            if (listBoxGracze.SelectedItems.Contains(gra.Gracz) && gra.createDate >= ToUnixTime(dateTimePickerOd.Value) && gra.createDate <= ToUnixTime(dateTimePickerDo.Value))
+            {
+                if (gra.Postac==comboBoxPostac.SelectedItem)
+                {
                     userControlGra wyswietlanaGra = new userControlGra(gra);
-                    wyswietlanaGra.Size = new System.Drawing.Size(712, 231);
-                    wyswietlanaGra.Tag = i++;
                     flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
                 }
-            }      
+                else if(comboBoxPostac.SelectedItem=="---------")
+                {
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                }
+            }
         }
 
         private void buttonWyswietl_Click(object sender, EventArgs e)
         {
-                wyswietlGry(checkBoxCzasGry,checkBoxChampion);
+            wyswietlGry();
         }
+
+         void wczytajPostacie()
+        {
+            comboBoxPostac.Items.Clear();
+            comboBoxPostac.Items.Add("---------");
+            comboBoxPostac.SelectedItem = "---------";
+
+             foreach(Postac p in Baza.Polaczenie.Postacs)
+             {
+                 comboBoxPostac.Items.Add(p);
+                 comboBoxPostac.DisplayMember = "name";
+             }
+        }
+
+        void ustawDaty()
+         {
+            dateTimePickerDo.Value = DateTime.Now;
+            dateTimePickerOd.Value = FromUnixTime(Baza.Polaczenie.Gries.Min(d => d.createDate));
+         }
+
         public DateTime FromUnixTime(long unixTime)
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return epoch.AddMilliseconds(unixTime);
         }
-        public long ToUnixTime( DateTime date)
+
+        public long ToUnixTime(DateTime date)
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return Convert.ToInt64((date - epoch).TotalMilliseconds);
         }
-
-        private void checkBoxCzasGry_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxCzasGry.Checked == true)
-            {
-                dateTimePicker1.Enabled = true;
-                dateTimePicker2.Enabled = true;
-            }
-            else
-            {
-                dateTimePicker1.Enabled = false;
-                dateTimePicker2.Enabled = false;
-            }
-        }
-
-        private void checkBoxChampion_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBoxChampion.Checked == true)
-            {
-                textBoxChampion.Enabled = true;
-            }
-            else
-            {
-                textBoxChampion.Enabled = false;
-            }
-        }
-
 
     }
 }
