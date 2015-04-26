@@ -13,6 +13,7 @@ namespace Projekt_lol_poprawiony
 {
     public partial class oknoGlowne : Form
     {
+        
         public oknoGlowne()
         {
             InitializeComponent();
@@ -187,12 +188,12 @@ namespace Projekt_lol_poprawiony
             {
                 if (gra.Postac==comboBoxPostac.SelectedItem)
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    userControlGra wyswietlanaGra = new userControlGra(gra,flowLayoutPanelGry.Width);
                     flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
                 }
                 else if(comboBoxPostac.SelectedItem=="---------")
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
+                    userControlGra wyswietlanaGra = new userControlGra(gra,flowLayoutPanelGry.Width);
                     flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
                 }
             }
@@ -232,6 +233,12 @@ namespace Projekt_lol_poprawiony
         {
             var epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
             return Convert.ToInt64((date - epoch).TotalMilliseconds);
+        }
+
+        private void flowLayoutPanelGry_Resize(object sender, EventArgs e)
+        {
+            flowLayoutPanelGry.Width = this.Width - panel1.Width - 20;
+            wyswietlGry();
         }
 
     }
