@@ -13,11 +13,12 @@ namespace Projekt_lol_poprawiony
 {
     public partial class oknoGlowne : Form
     {
-        
+        private int szer;
         public oknoGlowne()
         {
             InitializeComponent();
-
+            szer = this.Width;
+            MaximizeBox = false;
             wczytajGraczy();
             wczytajPostacie();
             ustawDaty();
@@ -159,30 +160,34 @@ namespace Projekt_lol_poprawiony
         private void wyswietlGry()
         {
             flowLayoutPanelGry.Controls.Clear();
+            int move = 0;
             if (radioButtonDataUtworzenia.Checked)
             {
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.timePlayed))
                 {
-                    filtrujGry(gra);
+                    filtrujGry(gra,move);
+                    move += 300;
                 }
             }
             else if(radioButtonZabojstwa.Checked)
             {
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.championsKilled))
                 {
-                    filtrujGry(gra);
+                    filtrujGry(gra,move);
+                    move += 300;
                 }
             }
             else if (radioButtonZgony.Checked)
             {
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.numDeaths))
                 {
-                    filtrujGry(gra);
+                    filtrujGry(gra,move);
+                    move += 300;
                 }
             }
         }
 
-        void filtrujGry(Gry gra)
+        void filtrujGry(Gry gra, int move)
         {
             if (listBoxGracze.SelectedItems.Contains(gra.Gracz) && gra.createDate >= ToUnixTime(dateTimePickerOd.Value) && gra.createDate <= ToUnixTime(dateTimePickerDo.Value))
             {
@@ -235,11 +240,15 @@ namespace Projekt_lol_poprawiony
             return Convert.ToInt64((date - epoch).TotalMilliseconds);
         }
 
-        private void flowLayoutPanelGry_Resize(object sender, EventArgs e)
+        private void oknoGlowne_ResizeEnd(object sender, EventArgs e)
         {
-            flowLayoutPanelGry.Width = this.Width - panel1.Width - 20;
-            wyswietlGry();
+            if (this.Width != szer)
+            {
+                wyswietlGry();
+                szer = this.Width;
+            }
         }
+
 
     }
 }

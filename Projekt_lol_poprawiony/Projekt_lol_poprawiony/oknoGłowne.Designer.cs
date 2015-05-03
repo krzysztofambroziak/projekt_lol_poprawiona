@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanelGry = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.listBoxGracze = new System.Windows.Forms.ListBox();
             this.buttonDodaj = new System.Windows.Forms.Button();
             this.buttonUsun = new System.Windows.Forms.Button();
+            this.buttonWyswietl = new System.Windows.Forms.Button();
+            this.buttonAktualizujDane = new System.Windows.Forms.Button();
             this.groupBoxFiltrowanie = new System.Windows.Forms.GroupBox();
             this.comboBoxPostac = new System.Windows.Forms.ComboBox();
             this.labelPostac = new System.Windows.Forms.Label();
@@ -39,28 +42,48 @@
             this.dateTimePickerOd = new System.Windows.Forms.DateTimePicker();
             this.labelDo = new System.Windows.Forms.Label();
             this.labelOd = new System.Windows.Forms.Label();
-            this.buttonWyswietl = new System.Windows.Forms.Button();
-            this.buttonAktualizujDane = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonZgony = new System.Windows.Forms.RadioButton();
             this.radioButtonZabojstwa = new System.Windows.Forms.RadioButton();
             this.radioButtonDataUtworzenia = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelGry = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.groupBoxFiltrowanie.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanelGry
+            // tableLayoutPanel1
             // 
-            this.flowLayoutPanelGry.AutoScroll = true;
-            this.flowLayoutPanelGry.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanelGry.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelGry.Margin = new System.Windows.Forms.Padding(4);
-            this.flowLayoutPanelGry.Name = "flowLayoutPanelGry";
-            this.flowLayoutPanelGry.Size = new System.Drawing.Size(718, 498);
-            this.flowLayoutPanelGry.TabIndex = 0;
-            this.flowLayoutPanelGry.Resize += new System.EventHandler(this.flowLayoutPanelGry_Resize);
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanelGry, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 4);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1224, 528);
+            this.tableLayoutPanel1.TabIndex = 10;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.Controls.Add(this.listBoxGracze);
+            this.flowLayoutPanel1.Controls.Add(this.buttonDodaj);
+            this.flowLayoutPanel1.Controls.Add(this.buttonUsun);
+            this.flowLayoutPanel1.Controls.Add(this.buttonWyswietl);
+            this.flowLayoutPanel1.Controls.Add(this.buttonAktualizujDane);
+            this.flowLayoutPanel1.Controls.Add(this.groupBoxFiltrowanie);
+            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1017, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(204, 501);
+            this.flowLayoutPanel1.TabIndex = 11;
             // 
             // listBoxGracze
             // 
@@ -76,7 +99,7 @@
             // 
             // buttonDodaj
             // 
-            this.buttonDodaj.Location = new System.Drawing.Point(4, 142);
+            this.buttonDodaj.Location = new System.Drawing.Point(4, 144);
             this.buttonDodaj.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(93, 28);
@@ -87,7 +110,7 @@
             // 
             // buttonUsun
             // 
-            this.buttonUsun.Location = new System.Drawing.Point(99, 142);
+            this.buttonUsun.Location = new System.Drawing.Point(105, 144);
             this.buttonUsun.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUsun.Name = "buttonUsun";
             this.buttonUsun.Size = new System.Drawing.Size(93, 28);
@@ -95,6 +118,28 @@
             this.buttonUsun.Text = "Usun";
             this.buttonUsun.UseVisualStyleBackColor = true;
             this.buttonUsun.Click += new System.EventHandler(this.buttonUsun_Click);
+            // 
+            // buttonWyswietl
+            // 
+            this.buttonWyswietl.Location = new System.Drawing.Point(4, 180);
+            this.buttonWyswietl.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonWyswietl.Name = "buttonWyswietl";
+            this.buttonWyswietl.Size = new System.Drawing.Size(189, 28);
+            this.buttonWyswietl.TabIndex = 6;
+            this.buttonWyswietl.Text = "Wyswietl";
+            this.buttonWyswietl.UseVisualStyleBackColor = true;
+            this.buttonWyswietl.Click += new System.EventHandler(this.buttonWyswietl_Click);
+            // 
+            // buttonAktualizujDane
+            // 
+            this.buttonAktualizujDane.Location = new System.Drawing.Point(4, 216);
+            this.buttonAktualizujDane.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAktualizujDane.Name = "buttonAktualizujDane";
+            this.buttonAktualizujDane.Size = new System.Drawing.Size(189, 28);
+            this.buttonAktualizujDane.TabIndex = 7;
+            this.buttonAktualizujDane.Text = "Aktualizuj dane";
+            this.buttonAktualizujDane.UseVisualStyleBackColor = true;
+            this.buttonAktualizujDane.Click += new System.EventHandler(this.buttonAktualizujDane_Click);
             // 
             // groupBoxFiltrowanie
             // 
@@ -104,7 +149,7 @@
             this.groupBoxFiltrowanie.Controls.Add(this.dateTimePickerOd);
             this.groupBoxFiltrowanie.Controls.Add(this.labelDo);
             this.groupBoxFiltrowanie.Controls.Add(this.labelOd);
-            this.groupBoxFiltrowanie.Location = new System.Drawing.Point(4, 250);
+            this.groupBoxFiltrowanie.Location = new System.Drawing.Point(4, 252);
             this.groupBoxFiltrowanie.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxFiltrowanie.Name = "groupBoxFiltrowanie";
             this.groupBoxFiltrowanie.Padding = new System.Windows.Forms.Padding(4);
@@ -171,34 +216,12 @@
             this.labelOd.TabIndex = 0;
             this.labelOd.Text = "Od:";
             // 
-            // buttonWyswietl
-            // 
-            this.buttonWyswietl.Location = new System.Drawing.Point(4, 178);
-            this.buttonWyswietl.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonWyswietl.Name = "buttonWyswietl";
-            this.buttonWyswietl.Size = new System.Drawing.Size(189, 28);
-            this.buttonWyswietl.TabIndex = 6;
-            this.buttonWyswietl.Text = "Wyswietl";
-            this.buttonWyswietl.UseVisualStyleBackColor = true;
-            this.buttonWyswietl.Click += new System.EventHandler(this.buttonWyswietl_Click);
-            // 
-            // buttonAktualizujDane
-            // 
-            this.buttonAktualizujDane.Location = new System.Drawing.Point(4, 214);
-            this.buttonAktualizujDane.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAktualizujDane.Name = "buttonAktualizujDane";
-            this.buttonAktualizujDane.Size = new System.Drawing.Size(189, 28);
-            this.buttonAktualizujDane.TabIndex = 7;
-            this.buttonAktualizujDane.Text = "Aktualizuj dane";
-            this.buttonAktualizujDane.UseVisualStyleBackColor = true;
-            this.buttonAktualizujDane.Click += new System.EventHandler(this.buttonAktualizujDane_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButtonZgony);
             this.groupBox1.Controls.Add(this.radioButtonZabojstwa);
             this.groupBox1.Controls.Add(this.radioButtonDataUtworzenia);
-            this.groupBox1.Location = new System.Drawing.Point(4, 376);
+            this.groupBox1.Location = new System.Drawing.Point(4, 378);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -244,46 +267,47 @@
             this.radioButtonDataUtworzenia.Text = "Data utworzenia";
             this.radioButtonDataUtworzenia.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // flowLayoutPanelGry
             // 
-            this.panel1.Controls.Add(this.listBoxGracze);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.buttonDodaj);
-            this.panel1.Controls.Add(this.groupBoxFiltrowanie);
-            this.panel1.Controls.Add(this.buttonAktualizujDane);
-            this.panel1.Controls.Add(this.buttonUsun);
-            this.panel1.Controls.Add(this.buttonWyswietl);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(780, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(201, 498);
-            this.panel1.TabIndex = 9;
+            this.flowLayoutPanelGry.AutoScroll = true;
+            this.flowLayoutPanelGry.AutoSize = true;
+            this.flowLayoutPanelGry.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanelGry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelGry.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanelGry.Name = "flowLayoutPanelGry";
+            this.flowLayoutPanelGry.Size = new System.Drawing.Size(1008, 522);
+            this.flowLayoutPanelGry.TabIndex = 10;
             // 
             // oknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 498);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.flowLayoutPanelGry);
+            this.ClientSize = new System.Drawing.Size(1237, 544);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "oknoGlowne";
             this.Text = "Okno Glowne";
+            this.ResizeEnd += new System.EventHandler(this.oknoGlowne_ResizeEnd);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.groupBoxFiltrowanie.ResumeLayout(false);
             this.groupBoxFiltrowanie.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelGry;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListBox listBoxGracze;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioButtonZgony;
+        private System.Windows.Forms.RadioButton radioButtonZabojstwa;
+        private System.Windows.Forms.RadioButton radioButtonDataUtworzenia;
         private System.Windows.Forms.Button buttonDodaj;
-        private System.Windows.Forms.Button buttonUsun;
         private System.Windows.Forms.GroupBox groupBoxFiltrowanie;
         private System.Windows.Forms.ComboBox comboBoxPostac;
         private System.Windows.Forms.Label labelPostac;
@@ -291,13 +315,11 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerOd;
         private System.Windows.Forms.Label labelDo;
         private System.Windows.Forms.Label labelOd;
-        private System.Windows.Forms.Button buttonWyswietl;
         private System.Windows.Forms.Button buttonAktualizujDane;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButtonZgony;
-        private System.Windows.Forms.RadioButton radioButtonZabojstwa;
-        private System.Windows.Forms.RadioButton radioButtonDataUtworzenia;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonUsun;
+        private System.Windows.Forms.Button buttonWyswietl;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelGry;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
