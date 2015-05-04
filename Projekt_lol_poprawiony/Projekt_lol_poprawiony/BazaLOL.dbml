@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bazaLol" Class="BazaLOLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Bartek\Documents\Projekt_LOL\bazaLol.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Projekt_lol_poprawiony.Properties.Settings" SettingsPropertyName="bazaLolConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Krzysiek\Documents\Projekt_LOL\bazaLol.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="Projekt_lol_poprawiony.Properties.Settings" SettingsPropertyName="bazaLolConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Region" Member="Regions">
+    <Type Name="Region">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nazwa" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Association Name="Region_Gracz" Member="Graczs" ThisKey="id" OtherKey="idRegionu" Type="Gracz" />
+    </Type>
+  </Table>
   <Table Name="dbo.Gracz" Member="Graczs">
     <Type Name="Gracz">
       <Column Name="id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -11,8 +18,8 @@
       <Column Name="urlInformacje" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="urlGry" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Association Name="Gracz_Gry" Member="Gries" ThisKey="id" OtherKey="summonerId" Type="Gry" />
-      <Association Name="IkonaGracza_Gracz" Member="IkonaGracza" ThisKey="idIkony" OtherKey="profileIconId" Type="IkonaGracza" IsForeignKey="true" />
       <Association Name="Region_Gracz" Member="Region" ThisKey="idRegionu" OtherKey="id" Type="Region" IsForeignKey="true" />
+      <Association Name="IkonaGracza_Gracz" Member="IkonaGracza" ThisKey="idIkony" OtherKey="profileIconId" Type="IkonaGracza" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Gry" Member="Gries">
@@ -106,13 +113,6 @@
       <Column Name="name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="ikona" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
       <Association Name="Postac_Gry" Member="Gries" ThisKey="championId" OtherKey="championId" Type="Gry" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Region" Member="Regions">
-    <Type Name="Region">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="nazwa" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Association Name="Region_Gracz" Member="Graczs" ThisKey="id" OtherKey="idRegionu" Type="Gracz" />
     </Type>
   </Table>
 </Database>

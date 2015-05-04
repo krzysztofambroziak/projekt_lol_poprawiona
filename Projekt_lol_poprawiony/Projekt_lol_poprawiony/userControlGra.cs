@@ -13,21 +13,18 @@ namespace Projekt_lol_poprawiony
     public partial class userControlGra : UserControl
     {
         private Gry gra;
-        private int szerokosc;
         public userControlGra()
         {
             InitializeComponent();
 
         }
 
-        public userControlGra(Gry gra, int szerokosc)
+        public userControlGra(Gry gra)
         {
             this.gra = gra;
-            this.szerokosc = szerokosc;
             InitializeComponent();
             List<int> listaZadane = new List<int>();
             List<int> listaOtrzymane = new List<int>();
-            this.Width = szerokosc;
             this.Click += userControlGra_Click;
             Image spell1 = Image.FromFile(@Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Projekt_LOL\\ikonki\\" + gra.spell1 + ".png");
             Image spell2 = Image.FromFile(@Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\Projekt_LOL\\ikonki\\" + gra.spell2 + ".png");
@@ -152,8 +149,7 @@ namespace Projekt_lol_poprawiony
                 chartOtrzymane.ChartAreas[0].AxisY.Interval = 100000;
             }
             panel1.Click += userControlGra_Click;
-            panel2.Click += userControlGra_Click;
-            panel3.Click += userControlGra_Click;
+            panelLabele.Click += userControlGra_Click;
             picturePostac.Click += userControlGra_Click;
             pictureBoxSpell2.Click += userControlGra_Click;
             pictureBoxSpell1.Click += userControlGra_Click;
@@ -166,18 +162,19 @@ namespace Projekt_lol_poprawiony
             pictureBoxItem0.Click += userControlGra_Click;
             chartOgolneObrazenia.Click += userControlGra_Click;
             chartOtrzymane.Click += userControlGra_Click;
+            flowLayoutPanel1.Click += userControlGra_Click;
         }
         void userControlGra_Click(object sender, EventArgs e)
         {
             userControlGra uc = this;
 
-            if (uc.Height == 221)
+            if (uc.Height == 159)
             {
-                uc.Height = 450;
+                uc.Height = 335;
             }
             else
             {
-                uc.Height = 221;
+                uc.Height = 159;
             }
 
         }

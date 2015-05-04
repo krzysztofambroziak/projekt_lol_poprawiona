@@ -13,12 +13,10 @@ namespace Projekt_lol_poprawiony
 {
     public partial class oknoGlowne : Form
     {
-        private int szer;
         public oknoGlowne()
         {
             InitializeComponent();
-            szer = this.Width;
-            MaximizeBox = false;
+
             wczytajGraczy();
             wczytajPostacie();
             ustawDaty();
@@ -160,47 +158,52 @@ namespace Projekt_lol_poprawiony
         private void wyswietlGry()
         {
             flowLayoutPanelGry.Controls.Clear();
-            int move = 0;
             if (radioButtonDataUtworzenia.Checked)
             {
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.timePlayed))
                 {
-                    filtrujGry(gra,move);
-                    move += 300;
+                    filtrujGry(gra);
                 }
             }
             else if(radioButtonZabojstwa.Checked)
             {
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.championsKilled))
                 {
-                    filtrujGry(gra,move);
-                    move += 300;
+                    filtrujGry(gra);
                 }
             }
             else if (radioButtonZgony.Checked)
             {
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.numDeaths))
                 {
-                    filtrujGry(gra,move);
-                    move += 300;
+                    filtrujGry(gra);
                 }
             }
         }
 
-        void filtrujGry(Gry gra, int move)
+        void filtrujGry(Gry gra)
         {
             if (listBoxGracze.SelectedItems.Contains(gra.Gracz) && gra.createDate >= ToUnixTime(dateTimePickerOd.Value) && gra.createDate <= ToUnixTime(dateTimePickerDo.Value))
             {
                 if (gra.Postac==comboBoxPostac.SelectedItem)
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra,flowLayoutPanelGry.Width);
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
                     flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
                 }
                 else if(comboBoxPostac.SelectedItem=="---------")
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra,flowLayoutPanelGry.Width);
+                    userControlGra wyswietlanaGra = new userControlGra(gra);
                     flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
                 }
+            }
+
+            flowLayoutPanelGry.Controls[0].Dock = DockStyle.None;
+            flowLayoutPanelGry.Controls[0].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[0].Margin.Horizontal;
+
+            for (int i = 1; i < flowLayoutPanelGry.Controls.Count; i++)
+            {
+                flowLayoutPanelGry.Controls[i].Dock = DockStyle.Top;
+                flowLayoutPanelGry.Controls[i].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[i].Margin.Horizontal;
             }
         }
 
@@ -240,15 +243,16 @@ namespace Projekt_lol_poprawiony
             return Convert.ToInt64((date - epoch).TotalMilliseconds);
         }
 
-        private void oknoGlowne_ResizeEnd(object sender, EventArgs e)
+        private void flowLayoutPanelGry_SizeChanged(object sender, EventArgs e)
         {
-            if (this.Width != szer)
+            flowLayoutPanelGry.Controls[0].Dock = DockStyle.None;
+            flowLayoutPanelGry.Controls[0].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[0].Margin.Horizontal;
+
+            for (int i = 1; i < flowLayoutPanelGry.Controls.Count; i++)
             {
-                wyswietlGry();
-                szer = this.Width;
+                flowLayoutPanelGry.Controls[i].Dock = DockStyle.Top;
+                flowLayoutPanelGry.Controls[i].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[i].Margin.Horizontal;
             }
         }
-
-
     }
 }
