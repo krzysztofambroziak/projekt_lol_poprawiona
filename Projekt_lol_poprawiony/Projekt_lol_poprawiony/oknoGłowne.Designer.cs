@@ -47,10 +47,21 @@
             this.radioButtonDataUtworzenia = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanelGlowny = new System.Windows.Forms.TableLayoutPanel();
             this.panelDoGlownego = new System.Windows.Forms.Panel();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.tabPageGry = new System.Windows.Forms.TabPage();
+            this.tabPageStatystyki = new System.Windows.Forms.TabPage();
+            this.listView = new System.Windows.Forms.ListView();
+            this.Nazwa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MIN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AVG = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.MAX = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBoxFiltrowanie.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanelGlowny.SuspendLayout();
             this.panelDoGlownego.SuspendLayout();
+            this.tabControl.SuspendLayout();
+            this.tabPageGry.SuspendLayout();
+            this.tabPageStatystyki.SuspendLayout();
             this.SuspendLayout();
             // 
             // flowLayoutPanelGry
@@ -59,7 +70,7 @@
             this.flowLayoutPanelGry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelGry.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanelGry.Name = "flowLayoutPanelGry";
-            this.flowLayoutPanelGry.Size = new System.Drawing.Size(646, 392);
+            this.flowLayoutPanelGry.Size = new System.Drawing.Size(632, 360);
             this.flowLayoutPanelGry.TabIndex = 0;
             this.flowLayoutPanelGry.SizeChanged += new System.EventHandler(this.flowLayoutPanelGry_SizeChanged);
             // 
@@ -231,8 +242,8 @@
             this.tableLayoutPanelGlowny.ColumnCount = 2;
             this.tableLayoutPanelGlowny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelGlowny.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
-            this.tableLayoutPanelGlowny.Controls.Add(this.flowLayoutPanelGry, 0, 0);
             this.tableLayoutPanelGlowny.Controls.Add(this.panelDoGlownego, 1, 0);
+            this.tableLayoutPanelGlowny.Controls.Add(this.tabControl, 0, 0);
             this.tableLayoutPanelGlowny.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelGlowny.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelGlowny.Name = "tableLayoutPanelGlowny";
@@ -256,13 +267,83 @@
             this.panelDoGlownego.Size = new System.Drawing.Size(154, 392);
             this.panelDoGlownego.TabIndex = 1;
             // 
+            // tabControl
+            // 
+            this.tabControl.Controls.Add(this.tabPageGry);
+            this.tabControl.Controls.Add(this.tabPageStatystyki);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(3, 3);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(646, 392);
+            this.tabControl.TabIndex = 2;
+            this.tabControl.SizeChanged += new System.EventHandler(this.tabControl_SizeChanged);
+            // 
+            // tabPageGry
+            // 
+            this.tabPageGry.Controls.Add(this.flowLayoutPanelGry);
+            this.tabPageGry.Location = new System.Drawing.Point(4, 22);
+            this.tabPageGry.Name = "tabPageGry";
+            this.tabPageGry.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageGry.Size = new System.Drawing.Size(638, 366);
+            this.tabPageGry.TabIndex = 0;
+            this.tabPageGry.Text = "Gry";
+            this.tabPageGry.UseVisualStyleBackColor = true;
+            // 
+            // tabPageStatystyki
+            // 
+            this.tabPageStatystyki.Controls.Add(this.listView);
+            this.tabPageStatystyki.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStatystyki.Name = "tabPageStatystyki";
+            this.tabPageStatystyki.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageStatystyki.Size = new System.Drawing.Size(638, 366);
+            this.tabPageStatystyki.TabIndex = 1;
+            this.tabPageStatystyki.Text = "Statystyki";
+            this.tabPageStatystyki.UseVisualStyleBackColor = true;
+            // 
+            // listView
+            // 
+            this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Nazwa,
+            this.MIN,
+            this.AVG,
+            this.MAX});
+            this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView.Location = new System.Drawing.Point(3, 3);
+            this.listView.Name = "listView";
+            this.listView.Size = new System.Drawing.Size(632, 360);
+            this.listView.TabIndex = 0;
+            this.listView.UseCompatibleStateImageBehavior = false;
+            this.listView.View = System.Windows.Forms.View.Details;
+            // 
+            // Nazwa
+            // 
+            this.Nazwa.Text = "Nazwa";
+            this.Nazwa.Width = 207;
+            // 
+            // MIN
+            // 
+            this.MIN.Text = "MIN";
+            this.MIN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MIN.Width = 112;
+            // 
+            // AVG
+            // 
+            this.AVG.Text = "AVG";
+            this.AVG.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // MAX
+            // 
+            this.MAX.Text = "MAX";
+            this.MAX.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // oknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 398);
             this.Controls.Add(this.tableLayoutPanelGlowny);
-            this.MinimumSize = new System.Drawing.Size(0, 436);
+            this.MinimumSize = new System.Drawing.Size(16, 436);
             this.Name = "oknoGlowne";
             this.Text = "Okno Glowne";
             this.groupBoxFiltrowanie.ResumeLayout(false);
@@ -271,6 +352,9 @@
             this.groupBox1.PerformLayout();
             this.tableLayoutPanelGlowny.ResumeLayout(false);
             this.panelDoGlownego.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
+            this.tabPageGry.ResumeLayout(false);
+            this.tabPageStatystyki.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -296,6 +380,14 @@
         private System.Windows.Forms.RadioButton radioButtonDataUtworzenia;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGlowny;
         private System.Windows.Forms.Panel panelDoGlownego;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage tabPageGry;
+        private System.Windows.Forms.TabPage tabPageStatystyki;
+        private System.Windows.Forms.ListView listView;
+        private System.Windows.Forms.ColumnHeader Nazwa;
+        private System.Windows.Forms.ColumnHeader MIN;
+        private System.Windows.Forms.ColumnHeader AVG;
+        private System.Windows.Forms.ColumnHeader MAX;
     }
 }
 

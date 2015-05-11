@@ -13,13 +13,17 @@ namespace Projekt_lol_poprawiony
 {
     public partial class oknoGlowne : Form
     {
+        List<Gry> listaGry;
+
         public oknoGlowne()
         {
             InitializeComponent();
+            listaGry = new List<Gry>();
 
             wczytajGraczy();
             wczytajPostacie();
             ustawDaty();
+            flowLayoutPanelGry_SizeChanged(null, null);
         }
 
         private void buttonDodaj_Click(object sender, EventArgs e)
@@ -157,12 +161,16 @@ namespace Projekt_lol_poprawiony
 
         private void wyswietlGry()
         {
+            listaGry.Clear();
+            listView.Items.Clear();
+
             flowLayoutPanelGry.Controls.Clear();
             if (radioButtonDataUtworzenia.Checked)
             {
-                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.timePlayed))
+                foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.createDate))
                 {
                     filtrujGry(gra);
+                    flowLayoutPanelGry_SizeChanged(null, null);
                 }
             }
             else if(radioButtonZabojstwa.Checked)
@@ -170,6 +178,7 @@ namespace Projekt_lol_poprawiony
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.championsKilled))
                 {
                     filtrujGry(gra);
+                    flowLayoutPanelGry_SizeChanged(null, null);
                 }
             }
             else if (radioButtonZgony.Checked)
@@ -177,8 +186,12 @@ namespace Projekt_lol_poprawiony
                 foreach (Gry gra in Baza.Polaczenie.Gries.OrderByDescending(d => d.numDeaths))
                 {
                     filtrujGry(gra);
+                    flowLayoutPanelGry_SizeChanged(null, null);
                 }
             }
+
+            wyswietlStatystyki();
+
         }
 
         void filtrujGry(Gry gra)
@@ -187,23 +200,22 @@ namespace Projekt_lol_poprawiony
             {
                 if (gra.Postac==comboBoxPostac.SelectedItem)
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    if (tabControl.SelectedIndex == 0)
+                    {
+                        userControlGra wyswietlanaGra = new userControlGra(gra);
+                        flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    }
+                    listaGry.Add(gra);
                 }
                 else if(comboBoxPostac.SelectedItem=="---------")
                 {
-                    userControlGra wyswietlanaGra = new userControlGra(gra);
-                    flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    if (tabControl.SelectedIndex == 0)
+                    {
+                        userControlGra wyswietlanaGra = new userControlGra(gra);
+                        flowLayoutPanelGry.Controls.Add(wyswietlanaGra);
+                    }
+                    listaGry.Add(gra);
                 }
-            }
-
-            flowLayoutPanelGry.Controls[0].Dock = DockStyle.None;
-            flowLayoutPanelGry.Controls[0].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[0].Margin.Horizontal;
-
-            for (int i = 1; i < flowLayoutPanelGry.Controls.Count; i++)
-            {
-                flowLayoutPanelGry.Controls[i].Dock = DockStyle.Top;
-                flowLayoutPanelGry.Controls[i].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[i].Margin.Horizontal;
             }
         }
 
@@ -245,14 +257,86 @@ namespace Projekt_lol_poprawiony
 
         private void flowLayoutPanelGry_SizeChanged(object sender, EventArgs e)
         {
-            flowLayoutPanelGry.Controls[0].Dock = DockStyle.None;
-            flowLayoutPanelGry.Controls[0].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[0].Margin.Horizontal;
-
-            for (int i = 1; i < flowLayoutPanelGry.Controls.Count; i++)
+            if (flowLayoutPanelGry.Controls.Count > 0)
             {
-                flowLayoutPanelGry.Controls[i].Dock = DockStyle.Top;
-                flowLayoutPanelGry.Controls[i].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[i].Margin.Horizontal;
+                flowLayoutPanelGry.Controls[0].Dock = DockStyle.None;
+                flowLayoutPanelGry.Controls[0].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[0].Margin.Horizontal;
+
+                for (int i = 1; i < flowLayoutPanelGry.Controls.Count; i++)
+                {
+                    flowLayoutPanelGry.Controls[i].Dock = DockStyle.Top;
+                    flowLayoutPanelGry.Controls[i].Width = flowLayoutPanelGry.Width - 20 - flowLayoutPanelGry.Controls[i].Margin.Horizontal;
+                }
             }
+            tabControl_SizeChanged(null, null);
+        }
+
+
+        private void tabControl_SizeChanged(object sender, EventArgs e)
+        {
+            foreach (ColumnHeader ch in listView.Columns)
+            {
+                ch.Width = (int)(tabControl.Size.Width * 0.25 - 4);
+            }
+        }
+
+        void wyswietlStatystyki()
+        {
+            if (listaGry.Count != 0)
+            {
+                string[] IP = { "IP", listaGry.Min(i => i.ipEarned).ToString(), Math.Round(listaGry.Average(i => i.ipEarned), 2).ToString(), listaGry.Max(i => i.ipEarned).ToString() };
+                listView.Items.Add(new ListViewItem(IP));
+
+                string[] Level = { "Poziom", listaGry.Min(i => i.level).ToString(), Math.Round(listaGry.Average(i => i.level), 2).ToString(), listaGry.Max(i => i.level).ToString() };
+                listView.Items.Add(new ListViewItem(Level));
+
+                string[] gold = { "Gold", listaGry.Min(i => i.goldEarned).ToString(), Math.Round(listaGry.Average(i => i.goldEarned), 2).ToString(), listaGry.Max(i => i.goldEarned).ToString() };
+                listView.Items.Add(new ListViewItem(gold));
+
+                string[] Zabojstwa = { "Zabojstwa", listaGry.Min(i => i.championsKilled).ToString(), Math.Round(listaGry.Average(i => i.championsKilled), 2).ToString(), listaGry.Max(i => i.championsKilled).ToString() };
+                listView.Items.Add(new ListViewItem(Zabojstwa));
+
+                string[] Zgony = { "Zgony", listaGry.Min(i => i.numDeaths).ToString(), Math.Round(listaGry.Average(i => i.numDeaths), 2).ToString(), listaGry.Max(i => i.numDeaths).ToString() };
+                listView.Items.Add(new ListViewItem(Zgony));
+
+                string[] Asysty = { "Asysty", listaGry.Min(i => i.assists).ToString(), Math.Round(listaGry.Average(i => i.assists), 2).ToString(), listaGry.Max(i => i.assists).ToString() };
+                listView.Items.Add(new ListViewItem(Asysty));
+
+                string[] ZabiteMiniony = { "Zabite miniony", listaGry.Min(i => i.minionsKilled).ToString(), Math.Round(listaGry.Average(i => i.minionsKilled), 2).ToString(), listaGry.Max(i => i.minionsKilled).ToString() };
+                listView.Items.Add(new ListViewItem(ZabiteMiniony));
+
+                string[] ZadDmg = { "Zadane obrazenia fizyczne", listaGry.Min(i => i.physicalDamageDealtToChampions).ToString(), Math.Round(listaGry.Average(i => i.physicalDamageDealtToChampions), 2).ToString(), listaGry.Max(i => i.physicalDamageDealtToChampions).ToString() };
+                listView.Items.Add(new ListViewItem(ZadDmg));
+
+                string[] ZadAp = { "Zadane obrazenia magiczne", listaGry.Min(i => i.magicDamageDealtToChampions).ToString(), Math.Round(listaGry.Average(i => i.magicDamageDealtToChampions), 2).ToString(), listaGry.Max(i => i.magicDamageDealtToChampions).ToString() };
+                listView.Items.Add(new ListViewItem(ZadAp));
+
+                string[] zN = { "Zadane obrazenia nieuniknione", listaGry.Min(i => i.trueDamageDealtToChampions).ToString(), Math.Round(listaGry.Average(i => i.trueDamageDealtToChampions), 2).ToString(), listaGry.Max(i => i.trueDamageDealtToChampions).ToString() };
+                listView.Items.Add(new ListViewItem(zN));
+
+                string[] oDmg = { "Otrzymane obrazenia fizyczne", listaGry.Min(i => i.physicalDamageTaken).ToString(), Math.Round(listaGry.Average(i => i.physicalDamageTaken), 2).ToString(), listaGry.Max(i => i.physicalDamageTaken).ToString() };
+                listView.Items.Add(new ListViewItem(oDmg));
+
+                string[] oAP = { "Otrzymane obrazenia magiczne", listaGry.Min(i => i.magicDamageTaken).ToString(), Math.Round(listaGry.Average(i => i.magicDamageTaken), 2).ToString(), listaGry.Max(i => i.magicDamageTaken).ToString() };
+                listView.Items.Add(new ListViewItem(oAP));
+
+                string[] oN = { "Otrzymane obrazenia nieuniknione", listaGry.Min(i => i.trueDamageTaken).ToString(), Math.Round(listaGry.Average(i => i.trueDamageTaken), 2).ToString(), listaGry.Max(i => i.trueDamageTaken).ToString() };
+                listView.Items.Add(new ListViewItem(oN));
+
+                string[] heal = { "Ilosc wyleczonego zdrowie", listaGry.Min(i => i.totalHeal).ToString(), Math.Round(listaGry.Average(i => i.totalHeal), 2).ToString(), listaGry.Max(i => i.totalHeal).ToString() };
+                listView.Items.Add(new ListViewItem(heal));
+
+                string[] kW = { "Kupione wardy", listaGry.Min(i => i.sightWardsBought).ToString(), Math.Round(listaGry.Average(i => i.sightWardsBought), 2).ToString(), listaGry.Max(i => i.sightWardsBought).ToString() };
+                listView.Items.Add(new ListViewItem(kW));
+
+                string[] pW = { "Postawione wardy", listaGry.Min(i => i.wardPlaced).ToString(), Math.Round(listaGry.Average(i => i.wardPlaced), 2).ToString(), listaGry.Max(i => i.wardPlaced).ToString() };
+                listView.Items.Add(new ListViewItem(pW));
+
+                string[] zW = { "Zabite wardy", listaGry.Min(i => i.wardKilled).ToString(), Math.Round(listaGry.Average(i => i.wardKilled), 2).ToString(), listaGry.Max(i => i.wardKilled).ToString() };
+                listView.Items.Add(new ListViewItem(zW));
+            }
+
+
         }
     }
 }
