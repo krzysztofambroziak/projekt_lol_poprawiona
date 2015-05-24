@@ -191,6 +191,7 @@ namespace Projekt_lol_poprawiony
             }
 
             wyswietlStatystyki();
+            //StaystykiGracza();
 
         }
 
@@ -335,8 +336,175 @@ namespace Projekt_lol_poprawiony
                 string[] zW = { "Zabite wardy", listaGry.Min(i => i.wardKilled).ToString(), Math.Round(listaGry.Average(i => i.wardKilled), 2).ToString(), listaGry.Max(i => i.wardKilled).ToString() };
                 listView.Items.Add(new ListViewItem(zW));
             }
+        }
+        private void StaystykiGracza()
+        {
+            List<string> gracze = new List<string>();
+            foreach(Object element in listBoxGracze.SelectedItems)
+            {
+                gracze.Add(listBoxGracze.GetItemText(element));
+                chart1.Series.Add("" + listBoxGracze.GetItemText(element) + "");
+                chart1.Series["" + listBoxGracze.GetItemText(element) + ""].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+            }
+            chart1.Visible = true;
+            chart1.ChartAreas[0].RecalculateAxesScale();
+            
+            foreach(string gracz in gracze)
+            {
+                
+                long indeks = Baza.Polaczenie.Graczs.Where(z=>z.name == gracz).Select(y => y.id).First();
+                if (comboBox1.SelectedItem == "IP")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.ipEarned).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.ipEarned), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.ipEarned).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.ipEarned));
+                    chart1.Series[""+gracz+""].Points.AddXY(0,Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.ipEarned), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.ipEarned));
+                }
+                else if (comboBox1.SelectedItem == "Poziom")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.level).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.level), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.level).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.level));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.level), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.level));
+                }
+                else if (comboBox1.SelectedItem == "Gold")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.goldEarned).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.goldEarned), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.goldEarned).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.goldEarned));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.goldEarned), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.goldEarned));
+                }
+                else if (comboBox1.SelectedItem == "Zabójstwa")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.championsKilled).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.championsKilled), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.championsKilled).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.championsKilled));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.championsKilled), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.championsKilled));
+                }
+                else if (comboBox1.SelectedItem == "Zgony")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.numDeaths).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.numDeaths), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.numDeaths).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.numDeaths));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.numDeaths), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.numDeaths));
+                }
+                else if (comboBox1.SelectedItem == "Asysty")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.assists).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.assists), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.assists).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.assists));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.assists), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.assists));
+                }
+                else if (comboBox1.SelectedItem == "Zabite miniony")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.minionsKilled).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.minionsKilled), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.minionsKilled).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.minionsKilled));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.minionsKilled), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.minionsKilled));
+                }
+                else if (comboBox1.SelectedItem == "Zadane obrażenia fizyczne")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.physicalDamageDealtToChampions).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.physicalDamageDealtToChampions), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.physicalDamageDealtToChampions).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.physicalDamageDealtToChampions));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.physicalDamageDealtToChampions), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.physicalDamageDealtToChampions));
+                }
+                else if (comboBox1.SelectedItem == "Zadane obrażenia magiczne")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.magicDamageDealtToChampions).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.magicDamageDealtToChampions), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.magicDamageDealtToChampions).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.magicDamageDealtToChampions));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.magicDamageDealtToChampions), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.magicDamageDealtToChampions));
+                }
+                else if (comboBox1.SelectedItem == "Zadane obrażenia nieuniknione")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.trueDamageDealtToChampions).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.trueDamageDealtToChampions), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.trueDamageDealtToChampions).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.trueDamageDealtToChampions));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.trueDamageDealtToChampions), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.trueDamageDealtToChampions));
+                }
+                else if(comboBox1.SelectedItem == "Otrzymane obrażenia fizyczne")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.physicalDamageTaken).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.physicalDamageTaken), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.physicalDamageTaken).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.physicalDamageTaken));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.physicalDamageTaken), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.physicalDamageTaken));
+                }
+                else if (comboBox1.SelectedItem == "Otrzymane obrażenia magiczne")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.magicDamageTaken).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.magicDamageTaken), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.magicDamageTaken).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.magicDamageTaken));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.magicDamageTaken), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.magicDamageTaken));
+                }
+                else if (comboBox1.SelectedItem == "Otrzymane obrażenia nieuniknione")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.trueDamageTaken).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.trueDamageTaken), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.trueDamageTaken).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.trueDamageTaken));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.trueDamageTaken), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.trueDamageTaken));
+                }
+                else if (comboBox1.SelectedItem == "Ilość wyleczonego zdrowia")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.totalHeal).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.totalHeal), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.totalHeal).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.totalHeal));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.totalHeal), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.totalHeal));
+                }
+                else if(comboBox1.SelectedItem == "Kupione wardy")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.sightWardsBought).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.sightWardsBought), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.sightWardsBought).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.sightWardsBought));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.sightWardsBought), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.sightWardsBought));
+                }
+                else if (comboBox1.SelectedItem == "Postawione wardy")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.wardPlaced).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.wardPlaced), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.wardPlaced).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.wardPlaced));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.wardPlaced), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.wardPlaced));
+                }
+                else if (comboBox1.SelectedItem == "Zniszczone wardy")
+                {
+                    string[] zW = { "" + gracz + "", listaGry.Where(x => x.summonerId == indeks).Min(i => i.wardKilled).ToString(), Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.wardKilled), 2).ToString(), listaGry.Where(x => x.summonerId == indeks).Max(i => i.wardKilled).ToString() };
+                    listView1.Items.Add(new ListViewItem(zW));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Min(i => i.wardKilled));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, Math.Round(listaGry.Where(x => x.summonerId == indeks).Average(i => i.wardKilled), 2));
+                    chart1.Series["" + gracz + ""].Points.AddXY(0, listaGry.Where(x => x.summonerId == indeks).Max(i => i.wardKilled));
+                }
+                chart1.Legends.Add("" + gracz + "");
+                chart1.Legends["" + gracz + ""].Enabled = true;
+                chart1.Legends["" + gracz + ""].Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Right;
+                chart1.Series["" + gracz + ""].Points[0].AxisLabel = "Min";
+                chart1.Series["" + gracz + ""].Points[1].AxisLabel = "Avg";
+                chart1.Series["" + gracz + ""].Points[2].AxisLabel = "Max";
+            }
+            gracze.Clear();
+        }
 
-
+        private void comboBox1_SelectedValueChanged(object sender, EventArgs e)
+        {
+            chart1.Legends.Clear();
+            listView1.Items.Clear();
+            chart1.Series.Clear();
+            StaystykiGracza();
         }
     }
 }
